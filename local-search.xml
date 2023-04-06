@@ -4,6 +4,48 @@
   
   
   <entry>
+    <title>remix使用</title>
+    <link href="/2023/04/06/remix%E4%BD%BF%E7%94%A8/"/>
+    <url>/2023/04/06/remix%E4%BD%BF%E7%94%A8/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Remix使用"><a href="#Remix使用" class="headerlink" title="Remix使用"></a>Remix使用</h1><h2 id="左侧栏"><a href="#左侧栏" class="headerlink" title="左侧栏"></a><strong>左侧栏</strong></h2><p>文件夹：</p><ol><li>contracts：放智能合约</li><li>scripts：运行智能合约的脚本</li><li>tests：跑智能合约单元测试用</li></ol><p>SOLIDITY COMPILER：编译器</p><ol><li>COMPILER选项：选择编译器版本</li><li>LANGUAGE选项：选择计算机语言</li><li>EVM VERSION选项：运行环境的选择，有许多版本，每个都行，随便选，一般选default默认版本</li><li>Auto compile勾选：自动编译，修改代码之后会对新的代码自动进行编译</li><li>Enable optimization勾选：优化代码，一般不用改，默认200，但是如果智能合约使用的人很多建议改大一点到1000以上，太小的话gas会很高</li><li>Hide warnings勾选：是否隐藏警告，不用管</li><li>Compile按钮：编译。在文件中选一个智能合约文件，然后点这个按钮可以对它编译</li></ol><p>DEPLOY&amp;RUN TRANSACTIONS：智能合约所部署的环境的相关</p><ol><li>ENVIRONMENT选项：有很多环境可选，JavaScrupt VM是JS虚拟机，运行在本机内存，而Injected Web3就是运行在以太坊测试网，Web3 Provider是本地或者其他网络</li><li>ACCOUNT选项：账户选项，默认会生成十几个账户，每个账户10个以太坊</li><li>GAS LIMIT填空栏：气体限制选择，不知道有啥用</li><li>Deplay按钮：部署合约的按钮，在部署之前，在按钮上面的CONTRACT上选择需要部署的合约，部署成功之后终端里会有一些信息</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Blockchain</category>
+      
+      <category>Solidity</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>remix本地安装</title>
+    <link href="/2023/04/06/remix%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85/"/>
+    <url>/2023/04/06/remix%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85/</url>
+    
+    <content type="html"><![CDATA[<h1 id="reminx本地安装"><a href="#reminx本地安装" class="headerlink" title="reminx本地安装"></a>reminx本地安装</h1><h2 id="概论"><a href="#概论" class="headerlink" title="概论"></a><strong>概论</strong></h2><ol><li>remix分为后端remix-projrct和前端remixd，后端负责编译等事务的实现，前端负责连接网页与本地文件</li><li>先安装前端再安装后端</li><li>remix-project项目地址：<a href="https://github.com/ethereum/remix-project">https://github.com/ethereum/remix-project</a></li><li>remixd项目地址：<a href="https://github.com/ethereum/remixdb">https://github.com/ethereum/remixdb</a></li></ol><hr><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a><strong>部署</strong></h2><ol><li>用docker部署remix-project，先安装：<ol><li>正常来说是这样的命令：docker pull remixproject&#x2F;remix-ide:latest</li><li>对mac，比较特殊，要加一点platform信息，运行这条即可：docker run -p 8080:80 –platform linux&#x2F;amd64 remixproject&#x2F;remix-ide:latest</li></ol></li><li>启动后台remix-project：docker run -p 8080:80 remixproject&#x2F;remix-ide:latest</li><li>此时能通过localhost:8080访问remixIDE，但是为了连接本地服务器需要安装前端remixd</li><li>npm安装remixd，安装过程会有几号之后只能用https的警告，只是npm的官方通知不用理会：npm install remixd -g</li><li>启动remixd，其中中间-s的属性值是本地文件目录可以自行修改，-ide的属性值是访问网址，其中端口号要和安装remix-project时指定的端口相同：remixd -s &#x2F;Users&#x2F;dal&#x2F;Downloads&#x2F;solidity –remix-ide <a href="http://localhost:8080/">http://localhost:8080</a></li><li>尽情使用吧，本地编辑完合约，然后打开网页部署，记得可以在docker客户端里检查remix-project的运行情况确保在后台运行才能打开IDE</li></ol><hr><h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a><strong>运行</strong></h2><ol><li>先去docker客户端里运行remixproject&#x2F;remix-ide:latest</li><li>然后启动remix，其中注意本地文件夹目录是可以修改的，其实要修改网址和端口号也是可以的，但是要在安装remix-project那步的时候准备好：remixd -s &#x2F;Users&#x2F;dal&#x2F;Downloads&#x2F;solidity –remix-ide <a href="http://localhost:8080/">http://localhost:8080</a></li><li>访问remix本地客户端：<a href="http://localhost:8080/">http://localhost:8080</a></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Blockchain</category>
+      
+      <category>Solidity</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>极简Solidity语法总结</title>
     <link href="/2023/04/06/%E6%9E%81%E7%AE%80Solidity%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/"/>
     <url>/2023/04/06/%E6%9E%81%E7%AE%80Solidity%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/</url>
