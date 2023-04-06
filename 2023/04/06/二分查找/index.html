@@ -16,13 +16,13 @@
   <meta name="author" content="Dal">
   <meta name="keywords" content="">
   
-    <meta name="description" content="愿阳光明媚愿阳光明媚    愿1+1＝2    愿杨奉雪喜欢我">
+    <meta name="description" content="二分查找概述 二分算法解决问题的使用条件  有序：数据必须是有序的，不管是顺序表还是链，这不必多说 二段性：二分算法的判断条件必须具有二段性，通常是 “&amp;gt;” 或 “&amp;lt;”，人话说就是可以分为两部分，也可以说“查找的目标元素可以进行比较操作”   在算法题中，用二分算法解决问题的充分条件是什么？  数据具有单调性：二分算法适用于有序数组或者单调性强的问题。在这种情况下，可以通过比较中间值和">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>愿阳光明媚 - Dal的理想之地</title>
+  <title>二分查找 - Dal的理想之地</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -179,7 +179,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="愿阳光明媚"></span>
+            <span id="subtitle" data-typed-text="二分查找"></span>
           
         </div>
 
@@ -202,7 +202,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          23 字
+          1.7k 字
         
       </span>
     
@@ -213,7 +213,7 @@
         
         
         
-          1 分钟
+          14 分钟
         
       </span>
     
@@ -259,20 +259,48 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">愿阳光明媚</h1>
+            <h1 style="display: none">二分查找</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="愿阳光明媚"><a href="#愿阳光明媚" class="headerlink" title="愿阳光明媚"></a>愿阳光明媚</h1><p>愿阳光明媚</p>
-<br/>
+                <h1 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a><strong>概述</strong></h2><hr>
+<p><strong>二分算法解决问题的使用条件</strong></p>
+<ol>
+<li>有序：数据必须是有序的，不管是顺序表还是链，这不必多说</li>
+<li>二段性：二分算法的判断条件必须具有二段性，通常是 “&gt;” 或 “&lt;”，人话说就是可以分为两部分，也可以说“查找的目标元素可以进行比较操作”</li>
+</ol>
+<blockquote>
+<p><em>在算法题中，用二分算法解决问题的充分条件是什么？</em></p>
+<ol>
+<li>数据具有单调性：二分算法适用于有序数组或者单调性强的问题。在这种情况下，可以通过比较中间值和目标值的大小关系，排除一半的数据。</li>
+<li>数据量较大：如果数据量较小，直接遍历整个数组即可。但如果数据量较大，二分算法可以节省大量时间复杂度，使算法效率更高。</li>
+<li>没有重复元素：二分算法是基于元素唯一性的。如果存在重复元素，可能会出现一些问题，例如无法确定查找结果的唯一性。</li>
+<li>可以随机访问元素：二分算法需要能够随机访问数组中的元素。如果数据结构不支持随机访问，例如链表，二分算法就无法使用。</li>
+</ol>
+</blockquote>
+<hr>
+<h2 id="模板代码"><a href="#模板代码" class="headerlink" title="模板代码"></a><strong>模板代码</strong></h2><p>题目：</p>
+<blockquote>
+<p><em>一道二分查找题</em></p>
+<p>题干：满足 N ! 的末尾恰好有 K 个 0 的最小的 N 是多少?如果这样的 <em>N</em> 不存在输出 −1。</p>
+<p>输入格式：一个整数K</p>
+<p>输出格式：一个整数代表答案</p>
+<p>样例输入：2</p>
+<p>样例输出：10</p>
+</blockquote>
+<p>标准答案：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Scanner;<br><span class="hljs-comment">// 1:无需package</span><br><span class="hljs-comment">// 2: 类名必须Main, 不可修改</span><br> <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-comment">//求阶乘末尾0的个数其实就是求阶乘因子中5的个数</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-type">long</span> <span class="hljs-title function_">calc</span><span class="hljs-params">(<span class="hljs-type">long</span> x)</span> &#123;<br>        <span class="hljs-type">long</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span>(x!=<span class="hljs-number">0</span>) &#123;<br>            res=res+x/<span class="hljs-number">5</span>;<br>            x/=<span class="hljs-number">5</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">//二分查找</span><br>        Scanner scanner=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">long</span> k=scanner.nextLong();<br>        <span class="hljs-type">long</span> l=<span class="hljs-number">1</span>,r=Long.MAX_VALUE-<span class="hljs-number">5</span>;<span class="hljs-comment">//l为最左边，r为最右边</span><br>    <br>        <span class="hljs-keyword">while</span>(l&lt;r) &#123;<br>            <span class="hljs-type">long</span> mid=(l+r)/<span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span>(k&lt;=calc(mid)) &#123;<br>                r=mid;<br>            &#125;<span class="hljs-keyword">else</span> &#123;<br>                l=mid+<span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(calc(r)!=k) &#123;<br>            System.out.print(-<span class="hljs-number">1</span>);<br>        &#125;<span class="hljs-keyword">else</span> &#123;<br>            System.out.print(r);<br>        &#125;<br>    <br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
+<p>答案代码中，关于二分查找的分析：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//二分查找规定要求f(x)中的x是有序的</span><br><br><span class="hljs-comment">//规定一个最小值和最大值的指针，但要注意后续两者相加后是否会超过基本数据类型范围上限</span><br><span class="hljs-comment">//在此题中，l为最左边下标，r为最右边下标</span><br><span class="hljs-type">long</span> l=<span class="hljs-number">1</span>,r=Long.MAX_VALUE-<span class="hljs-number">5</span>;<br><br><span class="hljs-comment">//当左下标小于右下标时循环</span><br><span class="hljs-keyword">while</span>(l&lt;r) &#123;<br>	<span class="hljs-comment">//每次循环之前算出中下标</span><br>	<span class="hljs-type">long</span> mid=(l+r)/<span class="hljs-number">2</span>;<br><br>	<span class="hljs-comment">//如果中下标的值，在题目要求中偏小，把左下标的值更新为中下标</span><br>	<span class="hljs-keyword">if</span>(k&lt;=calc(mid)) &#123;<br>	r=mid;<br>	&#125;<span class="hljs-keyword">else</span> &#123; <span class="hljs-comment">//如果偏大，把右下标的值，更新为左下标</span><br>	l=mid+<span class="hljs-number">1</span>;<br>	&#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
 
-<p>愿1+1＝2</p>
-<br/>
-
-
-<p>愿杨奉雪喜欢我</p>
+<hr>
+<h2 id="关于被查找的数组元素总数奇偶性的理解"><a href="#关于被查找的数组元素总数奇偶性的理解" class="headerlink" title="关于被查找的数组元素总数奇偶性的理解"></a><strong>关于被查找的数组元素总数奇偶性的理解</strong></h2><p>GPT关于被查找的数组元素个数奇偶性的理解是：</p>
+<p>一句话就是，以上模板无论数组元素个数是奇是偶都适用，不过当元素个数为奇则最后只会剩下一个元素没有争议；元素个数为偶时最后剩下两个元素，两者都有可能是要找的目标</p>
+<blockquote>
+<p>这个二分查找算法是适用于所有元素个数为正整数的有序数组，无论数组元素个数是奇数还是偶数都可以使用这个模板。<br>对于奇数个元素的数组，最后剩下的中间元素就是要查找的元素；<br>对于偶数个元素的数组，则最后剩下的两个中间元素中任意一个都可能是要查找的元素。</p>
+</blockquote>
 
                 
               </div>
@@ -291,7 +319,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E8%AF%97/" class="category-chain-item">诗</a>
+  <a href="/categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
   
   
 
@@ -313,9 +341,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/04/06/%E5%BF%98%E6%8E%89%E9%BB%91%E6%9A%97%E9%87%8C%E7%9A%84%E5%B1%85%E5%BF%83%E5%8F%B5%E6%B5%8B/" title="忘掉黑暗里的居心叵测">
+                      <a href="/2023/04/06/%E6%84%BF%E9%98%B3%E5%85%89%E6%98%8E%E5%AA%9A/" title="愿阳光明媚">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">忘掉黑暗里的居心叵测</span>
+                        <span class="hidden-mobile">愿阳光明媚</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -323,8 +351,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/04/06/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" title="二分查找">
-                        <span class="hidden-mobile">二分查找</span>
+                      <a href="/2023/04/06/%E6%88%91%E4%B8%8D%E8%A6%81%E6%B4%BB%E5%A4%AA%E4%B9%85%20%E4%BA%94%E5%8D%81%E4%B9%9D%E5%B2%81%E5%B0%B1%E5%8F%AF%E7%9F%A3/" title="我不要活太久 五十九岁就可矣">
+                        <span class="hidden-mobile">我不要活太久 五十九岁就可矣</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
