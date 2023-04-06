@@ -16,13 +16,13 @@
   <meta name="author" content="Dal">
   <meta name="keywords" content="">
   
-    <meta name="description" content="我心中有我心中有很多奇妙幻想和飞扬的点子 在最深沉最黑暗的夜里才会开花 当我意识到我是人的时候 喜悦溢满流出我的胸膛    纵然我是颗尘埃无人注意 但总算和你们有了奇妙分别 如果你能牵着我思绪的一边线头 就能和我一起傲游到宇宙尽头 我的幸福分享给你 一半 便可填满整个宇宙 2021年05月16日">
+    <meta name="description" content="Vim极简命令手册前言和概述以下都是在正常模式下，即按下Esc所进入的模式，这个模式是Vim的精要，掌握了这些移动光标、切换插入模式、复制粘贴、增改删查、退出，基本能入门使用Vim。  正常模式定位光标：  逐个字符移动：hjkl，高阶就是前缀数字比如3j gg&amp;#x2F;G：移动到文档头和移动到文档尾，高阶就是行号+G调到指定行【文档移动】 control+f&amp;#x2F;b：翻页【页移动】 移动">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>我心中有 - Dal的理想之地</title>
+  <title>Vim极简命令手册 - Dal的理想之地</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -179,7 +179,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="我心中有"></span>
+            <span id="subtitle" data-typed-text="Vim极简命令手册"></span>
           
         </div>
 
@@ -202,7 +202,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          134 字
+          825 字
         
       </span>
     
@@ -213,7 +213,7 @@
         
         
         
-          2 分钟
+          7 分钟
         
       </span>
     
@@ -259,25 +259,53 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">我心中有</h1>
+            <h1 style="display: none">Vim极简命令手册</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="我心中有"><a href="#我心中有" class="headerlink" title="我心中有"></a>我心中有</h1><p>我心中有很多奇妙幻想和飞扬的点子</p>
-<p>在最深沉最黑暗的夜里才会开花</p>
-<p>当我意识到我是人的时候</p>
-<p>喜悦溢满流出我的胸膛</p>
-<br/>
-
-
-<p>纵然我是颗尘埃无人注意</p>
-<p>但总算和你们有了奇妙分别</p>
-<p>如果你能牵着我思绪的一边线头</p>
-<p>就能和我一起傲游到宇宙尽头</p>
-<p>我的幸福分享给你</p>
-<p>一半 便可填满整个宇宙</p>
-<p>2021年05月16日</p>
+                <h1 id="Vim极简命令手册"><a href="#Vim极简命令手册" class="headerlink" title="Vim极简命令手册"></a>Vim极简命令手册</h1><h2 id="前言和概述"><a href="#前言和概述" class="headerlink" title="前言和概述"></a>前言和概述</h2><p>以下都是在正常模式下，即按下Esc所进入的模式，这个模式是Vim的精要，掌握了这些移动光标、切换插入模式、复制粘贴、增改删查、退出，基本能入门使用Vim。</p>
+<hr>
+<h2 id="正常模式"><a href="#正常模式" class="headerlink" title="正常模式"></a>正常模式</h2><p>定位光标：</p>
+<ol>
+<li>逐个字符移动：hjkl，高阶就是前缀数字比如3j</li>
+<li>gg&#x2F;G：移动到文档头和移动到文档尾，高阶就是行号+G调到指定行【文档移动】</li>
+<li>control+f&#x2F;b：翻页【页移动】</li>
+<li>移动到行首尾：行首0行尾$，行尾不包括最后一个字符，那个位置你永远移动不到【行移动】</li>
+<li>wb：前后移动一个单词【行内移动】</li>
+<li>f&#x2F;Fn：光标移动到后文或前文中最近的字母n之前【行内移动】</li>
+</ol>
+<p>进入插入模式：</p>
+<ol>
+<li>ia：i是本体，在当前位置原地插入，即方块光标的左边缘，a是在当前位置后一个字符插入，即方块光标的右边缘</li>
+<li>IA：I是在行首插入，A是在行尾插入</li>
+<li>oO：o在下一行插入，O在上一行插入</li>
+</ol>
+<p>复制粘贴：</p>
+<ol>
+<li>yy：复制1行，高阶就是带数字2yy复制2行【行复制】</li>
+<li>可视模式：v+定位光标命令，y复制d剪切【精确复制】</li>
+<li>行剪切：其实dd就是剪切一行了，不管是dd还是dj都会把删除的东西放进剪切板【行剪切】</li>
+<li>在光标当前位置粘贴：p，记住如果是yy复制的行则会粘贴在下一行，这就是为什么有时候粘贴不好用【粘贴】</li>
+<li>交换当前行和下一行：ddp【行交换】</li>
+<li>交换当前字符和下一个字符：xp【字符交换】</li>
+</ol>
+<p>删除：</p>
+<ol>
+<li>删除一行：dd，高阶就是加数字d3d删除三行，还有dj删除上一行dk删除下一行【删除行】</li>
+<li>删除一个单词：dw，高阶就是加数字d3w删除三个单词，不过控制或者说数单词个数还需要研究一下什么叫单词【删除单词】</li>
+<li>删除一个字符：x，高阶就是加数字3x删除三个字符【删除字】</li>
+</ol>
+<p>把命令重复多遍：数字+命令即可，通常用于插入多个同样的字符比如3 a!<code>&lt;esc&gt;</code></p>
+<p>查找替换：</p>
+<ol>
+<li>替换：:％s&#x2F;abc&#x2F;def&#x2F;g把所有的 abc 替换为 def</li>
+</ol>
+<p>退出：</p>
+<ol>
+<li>快速保存并退出：ZZ</li>
+<li>放弃更改重新打开本文件：:e!</li>
+</ol>
 
                 
               </div>
@@ -296,7 +324,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E8%AF%97/" class="category-chain-item">诗</a>
+  <a href="/categories/Vim-NeoVim/" class="category-chain-item">Vim&amp;NeoVim</a>
   
   
 
@@ -318,18 +346,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/04/06/%E6%88%91%E4%B8%8D%E8%A6%81%E6%B4%BB%E5%A4%AA%E4%B9%85%20%E4%BA%94%E5%8D%81%E4%B9%9D%E5%B2%81%E5%B0%B1%E5%8F%AF%E7%9F%A3/" title="我不要活太久 五十九岁就可矣">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">我不要活太久 五十九岁就可矣</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/04/06/%E7%90%86%E6%83%B3/" title="理想">
-                        <span class="hidden-mobile">理想</span>
+                      <a href="/2023/04/06/%E4%BD%A0%E6%80%BB%E8%AF%B4%E4%BD%A0%E9%BB%9D%E9%BB%91/" title="镜子">
+                        <span class="hidden-mobile">镜子</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

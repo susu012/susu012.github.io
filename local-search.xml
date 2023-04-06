@@ -4,11 +4,30 @@
   
   
   <entry>
-    <title>忘掉黑暗里的居心叵测</title>
-    <link href="/2023/04/06/%E5%BF%98%E6%8E%89%E9%BB%91%E6%9A%97%E9%87%8C%E7%9A%84%E5%B1%85%E5%BF%83%E5%8F%B5%E6%B5%8B/"/>
-    <url>/2023/04/06/%E5%BF%98%E6%8E%89%E9%BB%91%E6%9A%97%E9%87%8C%E7%9A%84%E5%B1%85%E5%BF%83%E5%8F%B5%E6%B5%8B/</url>
+    <title>Vim极简命令手册</title>
+    <link href="/2023/04/06/Vim%E6%9E%81%E7%AE%80%E5%91%BD%E4%BB%A4%E6%89%8B%E5%86%8C/"/>
+    <url>/2023/04/06/Vim%E6%9E%81%E7%AE%80%E5%91%BD%E4%BB%A4%E6%89%8B%E5%86%8C/</url>
     
-    <content type="html"><![CDATA[<h1 id="忘掉黑暗里的居心叵测"><a href="#忘掉黑暗里的居心叵测" class="headerlink" title="忘掉黑暗里的居心叵测"></a>忘掉黑暗里的居心叵测</h1><p>忘掉黑暗里的居心叵测</p><p>我还想在夜里唱歌</p><p>一首献给我亲爱的母亲</p><p>一首送给我心爱的姑娘</p><br/><p>给母亲的是泪水</p><p>抱歉 人生是一张单程票</p><p>回不来的除了我还有美好的时光</p><p>母亲你的人生是一种差错的人生</p><br/><p>给姑娘的是笑容</p><p>我的笑容让你感到虚伪</p><p>其实你爱不爱我都像漂浮的云彩没有关系</p><p>宽谅一切是上路的前提</p><p>2020年12月09日</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Vim极简命令手册"><a href="#Vim极简命令手册" class="headerlink" title="Vim极简命令手册"></a>Vim极简命令手册</h1><h2 id="前言和概述"><a href="#前言和概述" class="headerlink" title="前言和概述"></a>前言和概述</h2><p>以下都是在正常模式下，即按下Esc所进入的模式，这个模式是Vim的精要，掌握了这些移动光标、切换插入模式、复制粘贴、增改删查、退出，基本能入门使用Vim。</p><hr><h2 id="正常模式"><a href="#正常模式" class="headerlink" title="正常模式"></a>正常模式</h2><p>定位光标：</p><ol><li>逐个字符移动：hjkl，高阶就是前缀数字比如3j</li><li>gg&#x2F;G：移动到文档头和移动到文档尾，高阶就是行号+G调到指定行【文档移动】</li><li>control+f&#x2F;b：翻页【页移动】</li><li>移动到行首尾：行首0行尾$，行尾不包括最后一个字符，那个位置你永远移动不到【行移动】</li><li>wb：前后移动一个单词【行内移动】</li><li>f&#x2F;Fn：光标移动到后文或前文中最近的字母n之前【行内移动】</li></ol><p>进入插入模式：</p><ol><li>ia：i是本体，在当前位置原地插入，即方块光标的左边缘，a是在当前位置后一个字符插入，即方块光标的右边缘</li><li>IA：I是在行首插入，A是在行尾插入</li><li>oO：o在下一行插入，O在上一行插入</li></ol><p>复制粘贴：</p><ol><li>yy：复制1行，高阶就是带数字2yy复制2行【行复制】</li><li>可视模式：v+定位光标命令，y复制d剪切【精确复制】</li><li>行剪切：其实dd就是剪切一行了，不管是dd还是dj都会把删除的东西放进剪切板【行剪切】</li><li>在光标当前位置粘贴：p，记住如果是yy复制的行则会粘贴在下一行，这就是为什么有时候粘贴不好用【粘贴】</li><li>交换当前行和下一行：ddp【行交换】</li><li>交换当前字符和下一个字符：xp【字符交换】</li></ol><p>删除：</p><ol><li>删除一行：dd，高阶就是加数字d3d删除三行，还有dj删除上一行dk删除下一行【删除行】</li><li>删除一个单词：dw，高阶就是加数字d3w删除三个单词，不过控制或者说数单词个数还需要研究一下什么叫单词【删除单词】</li><li>删除一个字符：x，高阶就是加数字3x删除三个字符【删除字】</li></ol><p>把命令重复多遍：数字+命令即可，通常用于插入多个同样的字符比如3 a!<code>&lt;esc&gt;</code></p><p>查找替换：</p><ol><li>替换：:％s&#x2F;abc&#x2F;def&#x2F;g把所有的 abc 替换为 def</li></ol><p>退出：</p><ol><li>快速保存并退出：ZZ</li><li>放弃更改重新打开本文件：:e!</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Vim&amp;NeoVim</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>镜子</title>
+    <link href="/2023/04/06/%E4%BD%A0%E6%80%BB%E8%AF%B4%E4%BD%A0%E9%BB%9D%E9%BB%91/"/>
+    <url>/2023/04/06/%E4%BD%A0%E6%80%BB%E8%AF%B4%E4%BD%A0%E9%BB%9D%E9%BB%91/</url>
+    
+    <content type="html"><![CDATA[<h1 id="你总说你黝黑"><a href="#你总说你黝黑" class="headerlink" title="你总说你黝黑"></a>你总说你黝黑</h1><p>黝黑的皮肤总好过强行变白的脂粉</p><p>你等我跑近时回眸的笑容就在发光</p><p>我想世上应该至少有一半的美好是黝黑的呢</p><p>星空 大地和眼睛</p>]]></content>
     
     
     <categories>
@@ -28,6 +47,25 @@
     <url>/2023/04/06/%E5%AE%9D%E8%B4%9D%EF%BC%8C%E6%9D%A5%E6%98%A5%E5%A4%A9%E7%8E%A9/</url>
     
     <content type="html"><![CDATA[<h1 id="镜子"><a href="#镜子" class="headerlink" title="镜子"></a>镜子</h1><p>世界上的一切都是镜子</p><p>物质的映出现实的自己</p><p>虚幻的映出理想的自己</p><p>远方是天而脚下的是地</p><p>我是一只徜徉在镜的鱼</p><p>梦想是此生只照哈哈镜</p><p>世界很大前途悠远无尽</p><p>漫看云朵卷舒怡然自乐</p><p>2021年05月13日</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>诗</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>忘掉黑暗里的居心叵测</title>
+    <link href="/2023/04/06/%E5%BF%98%E6%8E%89%E9%BB%91%E6%9A%97%E9%87%8C%E7%9A%84%E5%B1%85%E5%BF%83%E5%8F%B5%E6%B5%8B/"/>
+    <url>/2023/04/06/%E5%BF%98%E6%8E%89%E9%BB%91%E6%9A%97%E9%87%8C%E7%9A%84%E5%B1%85%E5%BF%83%E5%8F%B5%E6%B5%8B/</url>
+    
+    <content type="html"><![CDATA[<h1 id="忘掉黑暗里的居心叵测"><a href="#忘掉黑暗里的居心叵测" class="headerlink" title="忘掉黑暗里的居心叵测"></a>忘掉黑暗里的居心叵测</h1><p>忘掉黑暗里的居心叵测</p><p>我还想在夜里唱歌</p><p>一首献给我亲爱的母亲</p><p>一首送给我心爱的姑娘</p><br/><p>给母亲的是泪水</p><p>抱歉 人生是一张单程票</p><p>回不来的除了我还有美好的时光</p><p>母亲你的人生是一种差错的人生</p><br/><p>给姑娘的是笑容</p><p>我的笑容让你感到虚伪</p><p>其实你爱不爱我都像漂浮的云彩没有关系</p><p>宽谅一切是上路的前提</p><p>2020年12月09日</p>]]></content>
     
     
     <categories>
@@ -80,25 +118,6 @@
   
   
   <entry>
-    <title>镜子</title>
-    <link href="/2023/04/06/%E4%BD%A0%E6%80%BB%E8%AF%B4%E4%BD%A0%E9%BB%9D%E9%BB%91/"/>
-    <url>/2023/04/06/%E4%BD%A0%E6%80%BB%E8%AF%B4%E4%BD%A0%E9%BB%9D%E9%BB%91/</url>
-    
-    <content type="html"><![CDATA[<h1 id="你总说你黝黑"><a href="#你总说你黝黑" class="headerlink" title="你总说你黝黑"></a>你总说你黝黑</h1><p>黝黑的皮肤总好过强行变白的脂粉</p><p>你等我跑近时回眸的笑容就在发光</p><p>我想世上应该至少有一半的美好是黝黑的呢</p><p>星空 大地和眼睛</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>诗</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>我心中有</title>
     <link href="/2023/04/06/%E6%88%91%E5%BF%83%E4%B8%AD%E6%9C%89/"/>
     <url>/2023/04/06/%E6%88%91%E5%BF%83%E4%B8%AD%E6%9C%89/</url>
@@ -123,6 +142,25 @@
     <url>/2023/04/06/%E7%90%86%E6%83%B3/</url>
     
     <content type="html"><![CDATA[<h1 id="理想"><a href="#理想" class="headerlink" title="理想"></a>理想</h1><p>我愿意欺骗自己</p><p>阳光是暖的 空气是香的</p><p>烦恼是一只揉皱的纸飞机</p><p>让我们把它用力 扔掉</p><br/><p>在真实之海定锚</p><p>我是一只志于虚幻的独木舟</p><p>海水也不会施舍半分真实的怜悯</p><p>我只信 我的眼泪 比真实更真实</p><br/><p>我为眼泪而活 我的树根</p><p>闭眼就能看见 金色的岛屿</p><p>2019.8.28</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>诗</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>秋水</title>
+    <link href="/2023/04/06/%E7%A7%8B%E6%B0%B4/"/>
+    <url>/2023/04/06/%E7%A7%8B%E6%B0%B4/</url>
+    
+    <content type="html"><![CDATA[<h1 id="秋水"><a href="#秋水" class="headerlink" title="秋水"></a>秋水</h1><p>秋水是一种纯洁的颜料，涂抹你的心里，洁白</p><p>我站在小雨的九月，不会祈求命运赐予任何</p><p>抓住一颗星星，我要送给我爱的人</p><p>搏得一朵鲜花，你是一种无言的芬芳</p><p>磨碎星星和花，和我的喜悦的心情</p><p>带去沉默的信，和一满瓶纯洁的秋水</p><p>愿爱人喜欢这一切，绘制在青空的蓝色纸张</p><p>而我也会握你的手，轻轻呼唤</p><p>一起洗礼吧，在雨中，爱人</p><p>你愿意吗</p><p>2020.9.16</p>]]></content>
     
     
     <categories>
@@ -194,25 +232,6 @@
   
   
   <entry>
-    <title>秋水</title>
-    <link href="/2023/04/06/%E7%A7%8B%E6%B0%B4/"/>
-    <url>/2023/04/06/%E7%A7%8B%E6%B0%B4/</url>
-    
-    <content type="html"><![CDATA[<h1 id="秋水"><a href="#秋水" class="headerlink" title="秋水"></a>秋水</h1><p>秋水是一种纯洁的颜料，涂抹你的心里，洁白</p><p>我站在小雨的九月，不会祈求命运赐予任何</p><p>抓住一颗星星，我要送给我爱的人</p><p>搏得一朵鲜花，你是一种无言的芬芳</p><p>磨碎星星和花，和我的喜悦的心情</p><p>带去沉默的信，和一满瓶纯洁的秋水</p><p>愿爱人喜欢这一切，绘制在青空的蓝色纸张</p><p>而我也会握你的手，轻轻呼唤</p><p>一起洗礼吧，在雨中，爱人</p><p>你愿意吗</p><p>2020.9.16</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>诗</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>镜子</title>
     <link href="/2023/04/06/%E9%95%9C%E5%AD%90/"/>
     <url>/2023/04/06/%E9%95%9C%E5%AD%90/</url>
@@ -261,8 +280,6 @@
     
     
     <categories>
-      
-      <category>Blockchain</category>
       
       <category>Solidity</category>
       
