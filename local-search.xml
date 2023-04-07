@@ -5,8 +5,8 @@
   
   <entry>
     <title>Vim极简命令手册</title>
-    <link href="/2023/04/06/Vim%E6%9E%81%E7%AE%80%E5%91%BD%E4%BB%A4%E6%89%8B%E5%86%8C/"/>
-    <url>/2023/04/06/Vim%E6%9E%81%E7%AE%80%E5%91%BD%E4%BB%A4%E6%89%8B%E5%86%8C/</url>
+    <link href="/2023/04/06/Vim&amp;&amp;Neovim/Vim%E6%9E%81%E7%AE%80%E5%91%BD%E4%BB%A4%E6%89%8B%E5%86%8C/"/>
+    <url>/2023/04/06/Vim&amp;&amp;Neovim/Vim%E6%9E%81%E7%AE%80%E5%91%BD%E4%BB%A4%E6%89%8B%E5%86%8C/</url>
     
     <content type="html"><![CDATA[<h1 id="Vim极简命令手册"><a href="#Vim极简命令手册" class="headerlink" title="Vim极简命令手册"></a>Vim极简命令手册</h1><h2 id="前言和概述"><a href="#前言和概述" class="headerlink" title="前言和概述"></a>前言和概述</h2><p>以下都是在正常模式下，即按下Esc所进入的模式，这个模式是Vim的精要，掌握了这些移动光标、切换插入模式、复制粘贴、增改删查、退出，基本能入门使用Vim。</p><hr><h2 id="正常模式"><a href="#正常模式" class="headerlink" title="正常模式"></a>正常模式</h2><p>定位光标：</p><ol><li>逐个字符移动：hjkl，高阶就是前缀数字比如3j</li><li>gg&#x2F;G：移动到文档头和移动到文档尾，高阶就是行号+G调到指定行【文档移动】</li><li>control+f&#x2F;b：翻页【页移动】</li><li>移动到行首尾：行首0行尾$，行尾不包括最后一个字符，那个位置你永远移动不到【行移动】</li><li>wb：前后移动一个单词【行内移动】</li><li>f&#x2F;Fn：光标移动到后文或前文中最近的字母n之前【行内移动】</li></ol><p>进入插入模式：</p><ol><li>ia：i是本体，在当前位置原地插入，即方块光标的左边缘，a是在当前位置后一个字符插入，即方块光标的右边缘</li><li>IA：I是在行首插入，A是在行尾插入</li><li>oO：o在下一行插入，O在上一行插入</li></ol><p>复制粘贴：</p><ol><li>yy：复制1行，高阶就是带数字2yy复制2行【行复制】</li><li>可视模式：v+定位光标命令，y复制d剪切【精确复制】</li><li>行剪切：其实dd就是剪切一行了，不管是dd还是dj都会把删除的东西放进剪切板【行剪切】</li><li>在光标当前位置粘贴：p，记住如果是yy复制的行则会粘贴在下一行，这就是为什么有时候粘贴不好用【粘贴】</li><li>交换当前行和下一行：ddp【行交换】</li><li>交换当前字符和下一个字符：xp【字符交换】</li></ol><p>删除：</p><ol><li>删除一行：dd，高阶就是加数字d3d删除三行，还有dj删除上一行dk删除下一行【删除行】</li><li>删除一个单词：dw，高阶就是加数字d3w删除三个单词，不过控制或者说数单词个数还需要研究一下什么叫单词【删除单词】</li><li>删除一个字符：x，高阶就是加数字3x删除三个字符【删除字】</li></ol><p>把命令重复多遍：数字+命令即可，通常用于插入多个同样的字符比如3 a!<code>&lt;esc&gt;</code></p><p>查找替换：</p><ol><li>替换：:％s&#x2F;abc&#x2F;def&#x2F;g把所有的 abc 替换为 def</li></ol><p>退出：</p><ol><li>快速保存并退出：ZZ</li><li>放弃更改重新打开本文件：:e!</li></ol>]]></content>
     
@@ -23,104 +23,9 @@
   
   
   <entry>
-    <title>一道题理解动态规划、BFS、DFS</title>
-    <link href="/2023/04/06/%E4%B8%80%E9%81%93%E9%A2%98%E7%90%86%E8%A7%A3%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E3%80%81BFS%E3%80%81DFS/"/>
-    <url>/2023/04/06/%E4%B8%80%E9%81%93%E9%A2%98%E7%90%86%E8%A7%A3%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E3%80%81BFS%E3%80%81DFS/</url>
-    
-    <content type="html"><![CDATA[<h1 id="一道题理解动态规划、BFS、DFS"><a href="#一道题理解动态规划、BFS、DFS" class="headerlink" title="一道题理解动态规划、BFS、DFS"></a>一道题理解动态规划、BFS、DFS</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a><strong>题目</strong></h2><p>这里有一道能同时被动归、BFS、DFS解决的问题：</p><blockquote><p>给定一个m*n的网格和一个机器人的初始位置（0,0），机器人每次只能向下或者向右移动一步，问有多少种不同的路径可以到达网格右下角？</p></blockquote><hr><h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a><strong>动态规划</strong></h2><p>自然语言过程：定义二维表，初始化，两个for，return</p><p>口诀：表，初，for，return【表初 for return】</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">uniquePaths</span><span class="hljs-params">(<span class="hljs-type">int</span> m, <span class="hljs-type">int</span> n)</span> &#123;<br>    <span class="hljs-comment">//定义状态数组dp，dp[i][j]表示从(0,0)到(i,j)的不同路径数</span><br>    <span class="hljs-type">int</span>[][] dp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[m][n];<br>  <br>    <span class="hljs-comment">//初始化第一行和第一列，因为只能向右或向下走，所以这些位置的路径数都是1</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; m; i++)&#123;<br>        dp[i][<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; n; j++)&#123;<br>        dp[<span class="hljs-number">0</span>][j] = <span class="hljs-number">1</span>;<br>    &#125;<br>  <br>    <span class="hljs-comment">//动态规划求解</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; m; i++)&#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; j &lt; n; j++)&#123;<br>            dp[i][j] = dp[i-<span class="hljs-number">1</span>][j] + dp[i][j-<span class="hljs-number">1</span>];<br>        &#125;<br>    &#125;<br>  <br>    <span class="hljs-comment">//返回最终结果，即从(0,0)到(m-1,n-1)的路径数</span><br>    <span class="hljs-keyword">return</span> dp[m-<span class="hljs-number">1</span>][n-<span class="hljs-number">1</span>];<br>&#125;<br></code></pre></td></tr></table></figure><hr><h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a><strong>BFS</strong></h2><p>BFS是用队列加塞的方式顺带记录遍历探索的分支</p><p>自然语言过程：创建队列，添加起点，初始化计数器，非队空时循环，弹一个我就末尾计数，或者探索这个的周围并加塞</p><p>口诀：声明队列，起点加塞，计数器，非空循环，弹一个计数或者探索周围</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.LinkedList;<br><span class="hljs-keyword">import</span> java.util.Queue;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">BFS</span> &#123;<br>    <span class="hljs-comment">// 定义一个方法，用来计算机器人在网格中从起点走到终点的路径数量</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">uniquePaths</span><span class="hljs-params">(<span class="hljs-type">int</span> m, <span class="hljs-type">int</span> n)</span> &#123;<br>        <span class="hljs-comment">// 创建一个队列，用来存储位置信息</span><br>        Queue&lt;<span class="hljs-type">int</span>[]&gt; queue = <span class="hljs-keyword">new</span> <span class="hljs-title class_">LinkedList</span>&lt;&gt;();<br>        <span class="hljs-comment">// 将起点(0,0)添加到队列中</span><br>        queue.offer(<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[]&#123;<span class="hljs-number">0</span>, <span class="hljs-number">0</span>&#125;);<br>        <span class="hljs-comment">// 定义一个变量，用来计数路径的数量</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-comment">// 当队列不为空时循环，即还有位置未被搜索</span><br>        <span class="hljs-keyword">while</span> (!queue.isEmpty()) &#123;<br>            <span class="hljs-comment">// 取出队列中的一个位置信息</span><br>            <span class="hljs-type">int</span>[] cur = queue.poll();<br>            <span class="hljs-comment">// 如果该位置是终点，则将路径计数器加1</span><br>            <span class="hljs-keyword">if</span> (cur[<span class="hljs-number">0</span>] == m - <span class="hljs-number">1</span> &amp;&amp; cur[<span class="hljs-number">1</span>] == n - <span class="hljs-number">1</span>) &#123;<br>                count++;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-comment">// 否则，将当前位置向下或向右移动，并将可能到达的位置添加到队列中</span><br>                <span class="hljs-keyword">if</span> (cur[<span class="hljs-number">0</span>] + <span class="hljs-number">1</span> &lt; m) &#123;<br>                    queue.offer(<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[]&#123;cur[<span class="hljs-number">0</span>] + <span class="hljs-number">1</span>, cur[<span class="hljs-number">1</span>]&#125;);<br>                &#125;<br>                <span class="hljs-keyword">if</span> (cur[<span class="hljs-number">1</span>] + <span class="hljs-number">1</span> &lt; n) &#123;<br>                    queue.offer(<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[]&#123;cur[<span class="hljs-number">0</span>], cur[<span class="hljs-number">1</span>] + <span class="hljs-number">1</span>&#125;);<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-comment">// 返回计数器中存储的路径数量</span><br>        <span class="hljs-keyword">return</span> count;<br>    &#125;<br><br>    <span class="hljs-comment">// 主方法，用于测试uniquePaths方法</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// 创建一个BFS对象</span><br>        <span class="hljs-type">BFS</span> <span class="hljs-variable">solution</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">BFS</span>();<br>        <span class="hljs-comment">// 输出机器人在7 x 9网格上移动时到达右下角的不同路径数量</span><br>        System.out.println(solution.uniquePaths(<span class="hljs-number">7</span>,<span class="hljs-number">9</span>));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><hr><h2 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a><strong>DFS</strong></h2><p>DFS用递归的方式，在栈中记录下探索的分支</p><p>自然语言过程：dfs函数，形参输入起点，如果到终点就计数且return，如果往下或者往右不越界就dfs下一个或者右一个</p><p>定义dfs函数：以形参做起点，如果终点计数加return，不越界就dfs下一个位置</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">DFS</span>&#123;<br>    <span class="hljs-comment">// 定义网格的行数和列数</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> m, n;<br>    <span class="hljs-comment">// 定义计数器，用来记录不同路径的数量</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">uniquePaths</span><span class="hljs-params">(<span class="hljs-type">int</span> m, <span class="hljs-type">int</span> n)</span> &#123;<br>        <span class="hljs-comment">// 初始化网格的行数和列数</span><br>        <span class="hljs-built_in">this</span>.m = m;<br>        <span class="hljs-built_in">this</span>.n = n;<br>        <span class="hljs-comment">// 从起点（0,0）开始搜索</span><br>        dfs(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);<br>        <span class="hljs-comment">// 返回最终结果</span><br>        <span class="hljs-keyword">return</span> count;<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">dfs</span><span class="hljs-params">(<span class="hljs-type">int</span> x, <span class="hljs-type">int</span> y)</span> &#123;<br>        <span class="hljs-comment">// 如果到达终点，计数器加1</span><br>        <span class="hljs-keyword">if</span> (x == m - <span class="hljs-number">1</span> &amp;&amp; y == n - <span class="hljs-number">1</span>) &#123;<br>            count++;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br><br>        <span class="hljs-comment">// 向右移动一步，如果没有越界，继续搜索</span><br>        <span class="hljs-keyword">if</span> (x + <span class="hljs-number">1</span> &lt; m) &#123;<br>            dfs(x + <span class="hljs-number">1</span>, y);<br>        &#125;<br><br>        <span class="hljs-comment">// 向下移动一步，如果没有越界，继续搜索</span><br>        <span class="hljs-keyword">if</span> (y + <span class="hljs-number">1</span> &lt; n) &#123;<br>            dfs(x, y + <span class="hljs-number">1</span>);<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">DFS</span> <span class="hljs-variable">solution</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DFS</span>();<br>        System.out.println(solution.uniquePaths(<span class="hljs-number">4</span>,<span class="hljs-number">11</span>));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>BFS是弹一个我就探索这个的周围并加塞，DFS是达不到我就递归</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>算法</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>愿阳光明媚</title>
-    <link href="/2023/04/06/%E6%84%BF%E9%98%B3%E5%85%89%E6%98%8E%E5%AA%9A/"/>
-    <url>/2023/04/06/%E6%84%BF%E9%98%B3%E5%85%89%E6%98%8E%E5%AA%9A/</url>
-    
-    <content type="html"><![CDATA[<h1 id="愿阳光明媚"><a href="#愿阳光明媚" class="headerlink" title="愿阳光明媚"></a>愿阳光明媚</h1><p>愿阳光明媚</p><br/><p>愿1+1＝2</p><br/><p>愿杨奉雪喜欢我</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>诗</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>忘掉黑暗里的居心叵测</title>
-    <link href="/2023/04/06/%E5%BF%98%E6%8E%89%E9%BB%91%E6%9A%97%E9%87%8C%E7%9A%84%E5%B1%85%E5%BF%83%E5%8F%B5%E6%B5%8B/"/>
-    <url>/2023/04/06/%E5%BF%98%E6%8E%89%E9%BB%91%E6%9A%97%E9%87%8C%E7%9A%84%E5%B1%85%E5%BF%83%E5%8F%B5%E6%B5%8B/</url>
-    
-    <content type="html"><![CDATA[<h1 id="忘掉黑暗里的居心叵测"><a href="#忘掉黑暗里的居心叵测" class="headerlink" title="忘掉黑暗里的居心叵测"></a>忘掉黑暗里的居心叵测</h1><p>忘掉黑暗里的居心叵测</p><p>我还想在夜里唱歌</p><p>一首献给我亲爱的母亲</p><p>一首送给我心爱的姑娘</p><br/><p>给母亲的是泪水</p><p>抱歉 人生是一张单程票</p><p>回不来的除了我还有美好的时光</p><p>母亲你的人生是一种差错的人生</p><br/><p>给姑娘的是笑容</p><p>我的笑容让你感到虚伪</p><p>其实你爱不爱我都像漂浮的云彩没有关系</p><p>宽谅一切是上路的前提</p><p>2020年12月09日</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>诗</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>宝贝，来春天玩</title>
-    <link href="/2023/04/06/%E5%AE%9D%E8%B4%9D%EF%BC%8C%E6%9D%A5%E6%98%A5%E5%A4%A9%E7%8E%A9/"/>
-    <url>/2023/04/06/%E5%AE%9D%E8%B4%9D%EF%BC%8C%E6%9D%A5%E6%98%A5%E5%A4%A9%E7%8E%A9/</url>
-    
-    <content type="html"><![CDATA[<h1 id="镜子"><a href="#镜子" class="headerlink" title="镜子"></a>镜子</h1><p>宝贝，来春天玩</p><p>春天有好多好玩的风，雨，云</p><p>一起携手，在草原上放野</p><p>一起飞翔</p><p>飞掠一无所有的城市</p><p>飞掠平凡庸碌的一辈子</p><p>今天的你就像花儿一样</p><p>你一定在等这一刻绽放等了一辈子</p><p>我早已看到，你心里一定有灿烂的火苗</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>诗</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>二分查找</title>
-    <link href="/2023/04/06/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
-    <url>/2023/04/06/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</url>
-    
-    <content type="html"><![CDATA[<h1 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a><strong>概述</strong></h2><hr><p><strong>二分算法解决问题的使用条件</strong></p><ol><li>有序：数据必须是有序的，不管是顺序表还是链，这不必多说</li><li>二段性：二分算法的判断条件必须具有二段性，通常是 “&gt;” 或 “&lt;”，人话说就是可以分为两部分，也可以说“查找的目标元素可以进行比较操作”</li></ol><blockquote><p><em>在算法题中，用二分算法解决问题的充分条件是什么？</em></p><ol><li>数据具有单调性：二分算法适用于有序数组或者单调性强的问题。在这种情况下，可以通过比较中间值和目标值的大小关系，排除一半的数据。</li><li>数据量较大：如果数据量较小，直接遍历整个数组即可。但如果数据量较大，二分算法可以节省大量时间复杂度，使算法效率更高。</li><li>没有重复元素：二分算法是基于元素唯一性的。如果存在重复元素，可能会出现一些问题，例如无法确定查找结果的唯一性。</li><li>可以随机访问元素：二分算法需要能够随机访问数组中的元素。如果数据结构不支持随机访问，例如链表，二分算法就无法使用。</li></ol></blockquote><hr><h2 id="模板代码"><a href="#模板代码" class="headerlink" title="模板代码"></a><strong>模板代码</strong></h2><p>题目：</p><blockquote><p><em>一道二分查找题</em></p><p>题干：满足 N ! 的末尾恰好有 K 个 0 的最小的 N 是多少?如果这样的 <em>N</em> 不存在输出 −1。</p><p>输入格式：一个整数K</p><p>输出格式：一个整数代表答案</p><p>样例输入：2</p><p>样例输出：10</p></blockquote><p>标准答案：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Scanner;<br><span class="hljs-comment">// 1:无需package</span><br><span class="hljs-comment">// 2: 类名必须Main, 不可修改</span><br> <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-comment">//求阶乘末尾0的个数其实就是求阶乘因子中5的个数</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-type">long</span> <span class="hljs-title function_">calc</span><span class="hljs-params">(<span class="hljs-type">long</span> x)</span> &#123;<br>        <span class="hljs-type">long</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span>(x!=<span class="hljs-number">0</span>) &#123;<br>            res=res+x/<span class="hljs-number">5</span>;<br>            x/=<span class="hljs-number">5</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">//二分查找</span><br>        Scanner scanner=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">long</span> k=scanner.nextLong();<br>        <span class="hljs-type">long</span> l=<span class="hljs-number">1</span>,r=Long.MAX_VALUE-<span class="hljs-number">5</span>;<span class="hljs-comment">//l为最左边，r为最右边</span><br>    <br>        <span class="hljs-keyword">while</span>(l&lt;r) &#123;<br>            <span class="hljs-type">long</span> mid=(l+r)/<span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span>(k&lt;=calc(mid)) &#123;<br>                r=mid;<br>            &#125;<span class="hljs-keyword">else</span> &#123;<br>                l=mid+<span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(calc(r)!=k) &#123;<br>            System.out.print(-<span class="hljs-number">1</span>);<br>        &#125;<span class="hljs-keyword">else</span> &#123;<br>            System.out.print(r);<br>        &#125;<br>    <br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>答案代码中，关于二分查找的分析：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//二分查找规定要求f(x)中的x是有序的</span><br><br><span class="hljs-comment">//规定一个最小值和最大值的指针，但要注意后续两者相加后是否会超过基本数据类型范围上限</span><br><span class="hljs-comment">//在此题中，l为最左边下标，r为最右边下标</span><br><span class="hljs-type">long</span> l=<span class="hljs-number">1</span>,r=Long.MAX_VALUE-<span class="hljs-number">5</span>;<br><br><span class="hljs-comment">//当左下标小于右下标时循环</span><br><span class="hljs-keyword">while</span>(l&lt;r) &#123;<br><span class="hljs-comment">//每次循环之前算出中下标</span><br><span class="hljs-type">long</span> mid=(l+r)/<span class="hljs-number">2</span>;<br><br><span class="hljs-comment">//如果中下标的值，在题目要求中偏小，把左下标的值更新为中下标</span><br><span class="hljs-keyword">if</span>(k&lt;=calc(mid)) &#123;<br>r=mid;<br>&#125;<span class="hljs-keyword">else</span> &#123; <span class="hljs-comment">//如果偏大，把右下标的值，更新为左下标</span><br>l=mid+<span class="hljs-number">1</span>;<br>&#125;<br>&#125;<br><br></code></pre></td></tr></table></figure><hr><h2 id="关于被查找的数组元素总数奇偶性的理解"><a href="#关于被查找的数组元素总数奇偶性的理解" class="headerlink" title="关于被查找的数组元素总数奇偶性的理解"></a><strong>关于被查找的数组元素总数奇偶性的理解</strong></h2><p>GPT关于被查找的数组元素个数奇偶性的理解是：</p><p>一句话就是，以上模板无论数组元素个数是奇是偶都适用，不过当元素个数为奇则最后只会剩下一个元素没有争议；元素个数为偶时最后剩下两个元素，两者都有可能是要找的目标</p><blockquote><p>这个二分查找算法是适用于所有元素个数为正整数的有序数组，无论数组元素个数是奇数还是偶数都可以使用这个模板。<br>对于奇数个元素的数组，最后剩下的中间元素就是要查找的元素；<br>对于偶数个元素的数组，则最后剩下的两个中间元素中任意一个都可能是要查找的元素。</p></blockquote>]]></content>
-    
-    
-    <categories>
-      
-      <category>算法</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>你总说你黝黑</title>
-    <link href="/2023/04/06/%E4%BD%A0%E6%80%BB%E8%AF%B4%E4%BD%A0%E9%BB%9D%E9%BB%91/"/>
-    <url>/2023/04/06/%E4%BD%A0%E6%80%BB%E8%AF%B4%E4%BD%A0%E9%BB%9D%E9%BB%91/</url>
+    <link href="/2023/04/06/%E8%AF%97/%E4%BD%A0%E6%80%BB%E8%AF%B4%E4%BD%A0%E9%BB%9D%E9%BB%91/"/>
+    <url>/2023/04/06/%E8%AF%97/%E4%BD%A0%E6%80%BB%E8%AF%B4%E4%BD%A0%E9%BB%9D%E9%BB%91/</url>
     
     <content type="html"><![CDATA[<h1 id="你总说你黝黑"><a href="#你总说你黝黑" class="headerlink" title="你总说你黝黑"></a>你总说你黝黑</h1><p>黝黑的皮肤总好过强行变白的脂粉</p><p>你等我跑近时回眸的笑容就在发光</p><p>我想世上应该至少有一半的美好是黝黑的呢</p><p>星空 大地和眼睛</p>]]></content>
     
@@ -137,30 +42,11 @@
   
   
   <entry>
-    <title>我心中有</title>
-    <link href="/2023/04/06/%E6%88%91%E5%BF%83%E4%B8%AD%E6%9C%89/"/>
-    <url>/2023/04/06/%E6%88%91%E5%BF%83%E4%B8%AD%E6%9C%89/</url>
+    <title>宝贝，来春天玩</title>
+    <link href="/2023/04/06/%E8%AF%97/%E5%AE%9D%E8%B4%9D%EF%BC%8C%E6%9D%A5%E6%98%A5%E5%A4%A9%E7%8E%A9/"/>
+    <url>/2023/04/06/%E8%AF%97/%E5%AE%9D%E8%B4%9D%EF%BC%8C%E6%9D%A5%E6%98%A5%E5%A4%A9%E7%8E%A9/</url>
     
-    <content type="html"><![CDATA[<h1 id="我心中有"><a href="#我心中有" class="headerlink" title="我心中有"></a>我心中有</h1><p>我心中有很多奇妙幻想和飞扬的点子</p><p>在最深沉最黑暗的夜里才会开花</p><p>当我意识到我是人的时候</p><p>喜悦溢满流出我的胸膛</p><br/><p>纵然我是颗尘埃无人注意</p><p>但总算和你们有了奇妙分别</p><p>如果你能牵着我思绪的一边线头</p><p>就能和我一起傲游到宇宙尽头</p><br/><p>我的幸福分享给你</p><p>一半 便可填满整个宇宙</p><p>2021年05月16日</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>诗</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>秋水</title>
-    <link href="/2023/04/06/%E7%A7%8B%E6%B0%B4/"/>
-    <url>/2023/04/06/%E7%A7%8B%E6%B0%B4/</url>
-    
-    <content type="html"><![CDATA[<h1 id="秋水"><a href="#秋水" class="headerlink" title="秋水"></a>秋水</h1><p>秋水是一种纯洁的颜料，涂抹你的心里，洁白</p><p>我站在小雨的九月，不会祈求命运赐予任何</p><p>抓住一颗星星，我要送给我爱的人</p><p>搏得一朵鲜花，你是一种无言的芬芳</p><p>磨碎星星和花，和我的喜悦的心情</p><p>带去沉默的信，和一满瓶纯洁的秋水</p><p>愿爱人喜欢这一切，绘制在青空的蓝色纸张</p><p>而我也会握你的手，轻轻呼唤</p><p>一起洗礼吧，在雨中，爱人</p><p>你愿意吗</p><p>2020.9.16</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="镜子"><a href="#镜子" class="headerlink" title="镜子"></a>镜子</h1><p>宝贝，来春天玩</p><p>春天有好多好玩的风，雨，云</p><p>一起携手，在草原上放野</p><p>一起飞翔</p><p>飞掠一无所有的城市</p><p>飞掠平凡庸碌的一辈子</p><p>今天的你就像花儿一样</p><p>你一定在等这一刻绽放等了一辈子</p><p>我早已看到，你心里一定有灿烂的火苗</p>]]></content>
     
     
     <categories>
@@ -175,11 +61,11 @@
   
   
   <entry>
-    <title>理想</title>
-    <link href="/2023/04/06/%E7%90%86%E6%83%B3/"/>
-    <url>/2023/04/06/%E7%90%86%E6%83%B3/</url>
+    <title>忘掉黑暗里的居心叵测</title>
+    <link href="/2023/04/06/%E8%AF%97/%E5%BF%98%E6%8E%89%E9%BB%91%E6%9A%97%E9%87%8C%E7%9A%84%E5%B1%85%E5%BF%83%E5%8F%B5%E6%B5%8B/"/>
+    <url>/2023/04/06/%E8%AF%97/%E5%BF%98%E6%8E%89%E9%BB%91%E6%9A%97%E9%87%8C%E7%9A%84%E5%B1%85%E5%BF%83%E5%8F%B5%E6%B5%8B/</url>
     
-    <content type="html"><![CDATA[<h1 id="理想"><a href="#理想" class="headerlink" title="理想"></a>理想</h1><p>我愿意欺骗自己</p><p>阳光是暖的 空气是香的</p><p>烦恼是一只揉皱的纸飞机</p><p>让我们把它用力 扔掉</p><br/><p>在真实之海定锚</p><p>我是一只志于虚幻的独木舟</p><p>海水也不会施舍半分真实的怜悯</p><p>我只信 我的眼泪 比真实更真实</p><br/><p>我为眼泪而活 我的树根</p><p>闭眼就能看见 金色的岛屿</p><p>2019.8.28</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="忘掉黑暗里的居心叵测"><a href="#忘掉黑暗里的居心叵测" class="headerlink" title="忘掉黑暗里的居心叵测"></a>忘掉黑暗里的居心叵测</h1><p>忘掉黑暗里的居心叵测</p><p>我还想在夜里唱歌</p><p>一首献给我亲爱的母亲</p><p>一首送给我心爱的姑娘</p><br/><p>给母亲的是泪水</p><p>抱歉 人生是一张单程票</p><p>回不来的除了我还有美好的时光</p><p>母亲你的人生是一种差错的人生</p><br/><p>给姑娘的是笑容</p><p>我的笑容让你感到虚伪</p><p>其实你爱不爱我都像漂浮的云彩没有关系</p><p>宽谅一切是上路的前提</p><p>2020年12月09日</p>]]></content>
     
     
     <categories>
@@ -194,11 +80,11 @@
   
   
   <entry>
-    <title>路过科师大很多地方</title>
-    <link href="/2023/04/06/%E8%B7%AF%E8%BF%87%E7%A7%91%E5%B8%88%E5%A4%A7%E5%BE%88%E5%A4%9A%E5%9C%B0%E6%96%B9/"/>
-    <url>/2023/04/06/%E8%B7%AF%E8%BF%87%E7%A7%91%E5%B8%88%E5%A4%A7%E5%BE%88%E5%A4%9A%E5%9C%B0%E6%96%B9/</url>
+    <title>愿阳光明媚</title>
+    <link href="/2023/04/06/%E8%AF%97/%E6%84%BF%E9%98%B3%E5%85%89%E6%98%8E%E5%AA%9A/"/>
+    <url>/2023/04/06/%E8%AF%97/%E6%84%BF%E9%98%B3%E5%85%89%E6%98%8E%E5%AA%9A/</url>
     
-    <content type="html"><![CDATA[<h1 id="路过科师大很多地方"><a href="#路过科师大很多地方" class="headerlink" title="路过科师大很多地方"></a>路过科师大很多地方</h1><p>我们在江西科技师范大学谈恋爱</p><p>在百鸣路牵手</p><p>还在逸夫楼接吻</p><p>以及在河畔谈文学</p><p>约会的时间总过得很快</p><br/><p>在江西科技师范大学谈恋爱</p><p>我们不是第一个</p><p>当依偎的时候 当拥抱的时候 当亲吻的时候</p><p>我觉得连蚂蚁都在谈恋爱</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="愿阳光明媚"><a href="#愿阳光明媚" class="headerlink" title="愿阳光明媚"></a>愿阳光明媚</h1><p>愿阳光明媚</p><br/><p>愿1+1＝2</p><br/><p>愿杨奉雪喜欢我</p>]]></content>
     
     
     <categories>
@@ -214,8 +100,8 @@
   
   <entry>
     <title>我不要活太久 五十九岁就可矣</title>
-    <link href="/2023/04/06/%E6%88%91%E4%B8%8D%E8%A6%81%E6%B4%BB%E5%A4%AA%E4%B9%85%20%E4%BA%94%E5%8D%81%E4%B9%9D%E5%B2%81%E5%B0%B1%E5%8F%AF%E7%9F%A3/"/>
-    <url>/2023/04/06/%E6%88%91%E4%B8%8D%E8%A6%81%E6%B4%BB%E5%A4%AA%E4%B9%85%20%E4%BA%94%E5%8D%81%E4%B9%9D%E5%B2%81%E5%B0%B1%E5%8F%AF%E7%9F%A3/</url>
+    <link href="/2023/04/06/%E8%AF%97/%E6%88%91%E4%B8%8D%E8%A6%81%E6%B4%BB%E5%A4%AA%E4%B9%85%20%E4%BA%94%E5%8D%81%E4%B9%9D%E5%B2%81%E5%B0%B1%E5%8F%AF%E7%9F%A3/"/>
+    <url>/2023/04/06/%E8%AF%97/%E6%88%91%E4%B8%8D%E8%A6%81%E6%B4%BB%E5%A4%AA%E4%B9%85%20%E4%BA%94%E5%8D%81%E4%B9%9D%E5%B2%81%E5%B0%B1%E5%8F%AF%E7%9F%A3/</url>
     
     <content type="html"><![CDATA[<h1 id="我不要活太久-五十九岁就可矣"><a href="#我不要活太久-五十九岁就可矣" class="headerlink" title="我不要活太久 五十九岁就可矣"></a>我不要活太久 五十九岁就可矣</h1><p>我不要活太久 五十九岁就可矣</p><p>人老了真的很可怕</p><p>既要被小孩子教666的含义</p><p>还要被杨奉雪拖去爬泰山</p><br/><p>2020年11月28日</p><p>我不要活得太久</p><p>人老了真的很可怕</p><p>老人睡眠浅显短暂</p><p>假眠不能梦见杨奉雪</p><p>2020年12月07日</p><br/><p>我不要活太久</p><p>人老了真的很可怕</p><p>白发苍苍腿脚不敏</p><p>大千美好不能与妳一一游遍</p><p>2020年12月07日</p>]]></content>
     
@@ -232,11 +118,11 @@
   
   
   <entry>
-    <title>镜子</title>
-    <link href="/2023/04/06/%E9%95%9C%E5%AD%90/"/>
-    <url>/2023/04/06/%E9%95%9C%E5%AD%90/</url>
+    <title>理想</title>
+    <link href="/2023/04/06/%E8%AF%97/%E7%90%86%E6%83%B3/"/>
+    <url>/2023/04/06/%E8%AF%97/%E7%90%86%E6%83%B3/</url>
     
-    <content type="html"><![CDATA[<h1 id="镜子"><a href="#镜子" class="headerlink" title="镜子"></a>镜子</h1><p>世界上的一切都是镜子</p><p>物质的映出现实的自己</p><p>虚幻的映出理想的自己</p><p>远方是天而脚下的是地</p><br/><p>我是一只徜徉在镜的鱼</p><p>梦想是此生只照哈哈镜</p><p>世界很大前途悠远无尽</p><p>漫看云朵卷舒怡然自乐</p><p>2021年05月13日</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="理想"><a href="#理想" class="headerlink" title="理想"></a>理想</h1><p>我愿意欺骗自己</p><p>阳光是暖的 空气是香的</p><p>烦恼是一只揉皱的纸飞机</p><p>让我们把它用力 扔掉</p><br/><p>在真实之海定锚</p><p>我是一只志于虚幻的独木舟</p><p>海水也不会施舍半分真实的怜悯</p><p>我只信 我的眼泪 比真实更真实</p><br/><p>我为眼泪而活 我的树根</p><p>闭眼就能看见 金色的岛屿</p><p>2019.8.28</p>]]></content>
     
     
     <categories>
@@ -251,9 +137,66 @@
   
   
   <entry>
+    <title>我心中有</title>
+    <link href="/2023/04/06/%E8%AF%97/%E6%88%91%E5%BF%83%E4%B8%AD%E6%9C%89/"/>
+    <url>/2023/04/06/%E8%AF%97/%E6%88%91%E5%BF%83%E4%B8%AD%E6%9C%89/</url>
+    
+    <content type="html"><![CDATA[<h1 id="我心中有"><a href="#我心中有" class="headerlink" title="我心中有"></a>我心中有</h1><p>我心中有很多奇妙幻想和飞扬的点子</p><p>在最深沉最黑暗的夜里才会开花</p><p>当我意识到我是人的时候</p><p>喜悦溢满流出我的胸膛</p><br/><p>纵然我是颗尘埃无人注意</p><p>但总算和你们有了奇妙分别</p><p>如果你能牵着我思绪的一边线头</p><p>就能和我一起傲游到宇宙尽头</p><br/><p>我的幸福分享给你</p><p>一半 便可填满整个宇宙</p><p>2021年05月16日</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>诗</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>一道题理解动态规划、BFS、DFS</title>
+    <link href="/2023/04/06/%E7%AE%97%E6%B3%95/%E4%B8%80%E9%81%93%E9%A2%98%E7%90%86%E8%A7%A3%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E3%80%81BFS%E3%80%81DFS/"/>
+    <url>/2023/04/06/%E7%AE%97%E6%B3%95/%E4%B8%80%E9%81%93%E9%A2%98%E7%90%86%E8%A7%A3%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E3%80%81BFS%E3%80%81DFS/</url>
+    
+    <content type="html"><![CDATA[<h1 id="一道题理解动态规划、BFS、DFS"><a href="#一道题理解动态规划、BFS、DFS" class="headerlink" title="一道题理解动态规划、BFS、DFS"></a>一道题理解动态规划、BFS、DFS</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a><strong>题目</strong></h2><p>这里有一道能同时被动归、BFS、DFS解决的问题：</p><blockquote><p>给定一个m*n的网格和一个机器人的初始位置（0,0），机器人每次只能向下或者向右移动一步，问有多少种不同的路径可以到达网格右下角？</p></blockquote><hr><h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a><strong>动态规划</strong></h2><p>自然语言过程：定义二维表，初始化，两个for，return</p><p>口诀：表，初，for，return【表初 for return】</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">uniquePaths</span><span class="hljs-params">(<span class="hljs-type">int</span> m, <span class="hljs-type">int</span> n)</span> &#123;<br>    <span class="hljs-comment">//定义状态数组dp，dp[i][j]表示从(0,0)到(i,j)的不同路径数</span><br>    <span class="hljs-type">int</span>[][] dp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[m][n];<br>  <br>    <span class="hljs-comment">//初始化第一行和第一列，因为只能向右或向下走，所以这些位置的路径数都是1</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; m; i++)&#123;<br>        dp[i][<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; n; j++)&#123;<br>        dp[<span class="hljs-number">0</span>][j] = <span class="hljs-number">1</span>;<br>    &#125;<br>  <br>    <span class="hljs-comment">//动态规划求解</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; m; i++)&#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; j &lt; n; j++)&#123;<br>            dp[i][j] = dp[i-<span class="hljs-number">1</span>][j] + dp[i][j-<span class="hljs-number">1</span>];<br>        &#125;<br>    &#125;<br>  <br>    <span class="hljs-comment">//返回最终结果，即从(0,0)到(m-1,n-1)的路径数</span><br>    <span class="hljs-keyword">return</span> dp[m-<span class="hljs-number">1</span>][n-<span class="hljs-number">1</span>];<br>&#125;<br></code></pre></td></tr></table></figure><hr><h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a><strong>BFS</strong></h2><p>BFS是用队列加塞的方式顺带记录遍历探索的分支</p><p>自然语言过程：创建队列，添加起点，初始化计数器，非队空时循环，弹一个我就末尾计数，或者探索这个的周围并加塞</p><p>口诀：声明队列，起点加塞，计数器，非空循环，弹一个计数或者探索周围</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.LinkedList;<br><span class="hljs-keyword">import</span> java.util.Queue;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">BFS</span> &#123;<br>    <span class="hljs-comment">// 定义一个方法，用来计算机器人在网格中从起点走到终点的路径数量</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">uniquePaths</span><span class="hljs-params">(<span class="hljs-type">int</span> m, <span class="hljs-type">int</span> n)</span> &#123;<br>        <span class="hljs-comment">// 创建一个队列，用来存储位置信息</span><br>        Queue&lt;<span class="hljs-type">int</span>[]&gt; queue = <span class="hljs-keyword">new</span> <span class="hljs-title class_">LinkedList</span>&lt;&gt;();<br>        <span class="hljs-comment">// 将起点(0,0)添加到队列中</span><br>        queue.offer(<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[]&#123;<span class="hljs-number">0</span>, <span class="hljs-number">0</span>&#125;);<br>        <span class="hljs-comment">// 定义一个变量，用来计数路径的数量</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-comment">// 当队列不为空时循环，即还有位置未被搜索</span><br>        <span class="hljs-keyword">while</span> (!queue.isEmpty()) &#123;<br>            <span class="hljs-comment">// 取出队列中的一个位置信息</span><br>            <span class="hljs-type">int</span>[] cur = queue.poll();<br>            <span class="hljs-comment">// 如果该位置是终点，则将路径计数器加1</span><br>            <span class="hljs-keyword">if</span> (cur[<span class="hljs-number">0</span>] == m - <span class="hljs-number">1</span> &amp;&amp; cur[<span class="hljs-number">1</span>] == n - <span class="hljs-number">1</span>) &#123;<br>                count++;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-comment">// 否则，将当前位置向下或向右移动，并将可能到达的位置添加到队列中</span><br>                <span class="hljs-keyword">if</span> (cur[<span class="hljs-number">0</span>] + <span class="hljs-number">1</span> &lt; m) &#123;<br>                    queue.offer(<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[]&#123;cur[<span class="hljs-number">0</span>] + <span class="hljs-number">1</span>, cur[<span class="hljs-number">1</span>]&#125;);<br>                &#125;<br>                <span class="hljs-keyword">if</span> (cur[<span class="hljs-number">1</span>] + <span class="hljs-number">1</span> &lt; n) &#123;<br>                    queue.offer(<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[]&#123;cur[<span class="hljs-number">0</span>], cur[<span class="hljs-number">1</span>] + <span class="hljs-number">1</span>&#125;);<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-comment">// 返回计数器中存储的路径数量</span><br>        <span class="hljs-keyword">return</span> count;<br>    &#125;<br><br>    <span class="hljs-comment">// 主方法，用于测试uniquePaths方法</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// 创建一个BFS对象</span><br>        <span class="hljs-type">BFS</span> <span class="hljs-variable">solution</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">BFS</span>();<br>        <span class="hljs-comment">// 输出机器人在7 x 9网格上移动时到达右下角的不同路径数量</span><br>        System.out.println(solution.uniquePaths(<span class="hljs-number">7</span>,<span class="hljs-number">9</span>));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><hr><h2 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a><strong>DFS</strong></h2><p>DFS用递归的方式，在栈中记录下探索的分支</p><p>自然语言过程：dfs函数，形参输入起点，如果到终点就计数且return，如果往下或者往右不越界就dfs下一个或者右一个</p><p>定义dfs函数：以形参做起点，如果终点计数加return，不越界就dfs下一个位置</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">DFS</span>&#123;<br>    <span class="hljs-comment">// 定义网格的行数和列数</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> m, n;<br>    <span class="hljs-comment">// 定义计数器，用来记录不同路径的数量</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">uniquePaths</span><span class="hljs-params">(<span class="hljs-type">int</span> m, <span class="hljs-type">int</span> n)</span> &#123;<br>        <span class="hljs-comment">// 初始化网格的行数和列数</span><br>        <span class="hljs-built_in">this</span>.m = m;<br>        <span class="hljs-built_in">this</span>.n = n;<br>        <span class="hljs-comment">// 从起点（0,0）开始搜索</span><br>        dfs(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);<br>        <span class="hljs-comment">// 返回最终结果</span><br>        <span class="hljs-keyword">return</span> count;<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">dfs</span><span class="hljs-params">(<span class="hljs-type">int</span> x, <span class="hljs-type">int</span> y)</span> &#123;<br>        <span class="hljs-comment">// 如果到达终点，计数器加1</span><br>        <span class="hljs-keyword">if</span> (x == m - <span class="hljs-number">1</span> &amp;&amp; y == n - <span class="hljs-number">1</span>) &#123;<br>            count++;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br><br>        <span class="hljs-comment">// 向右移动一步，如果没有越界，继续搜索</span><br>        <span class="hljs-keyword">if</span> (x + <span class="hljs-number">1</span> &lt; m) &#123;<br>            dfs(x + <span class="hljs-number">1</span>, y);<br>        &#125;<br><br>        <span class="hljs-comment">// 向下移动一步，如果没有越界，继续搜索</span><br>        <span class="hljs-keyword">if</span> (y + <span class="hljs-number">1</span> &lt; n) &#123;<br>            dfs(x, y + <span class="hljs-number">1</span>);<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">DFS</span> <span class="hljs-variable">solution</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DFS</span>();<br>        System.out.println(solution.uniquePaths(<span class="hljs-number">4</span>,<span class="hljs-number">11</span>));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>BFS是弹一个我就探索这个的周围并加塞，DFS是达不到我就递归</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>算法</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>二分查找</title>
+    <link href="/2023/04/06/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
+    <url>/2023/04/06/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</url>
+    
+    <content type="html"><![CDATA[<h1 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a><strong>概述</strong></h2><hr><p><strong>二分算法解决问题的使用条件</strong></p><ol><li>有序：数据必须是有序的，不管是顺序表还是链，这不必多说</li><li>二段性：二分算法的判断条件必须具有二段性，通常是 “&gt;” 或 “&lt;”，人话说就是可以分为两部分，也可以说“查找的目标元素可以进行比较操作”</li></ol><blockquote><p><em>在算法题中，用二分算法解决问题的充分条件是什么？</em></p><ol><li>数据具有单调性：二分算法适用于有序数组或者单调性强的问题。在这种情况下，可以通过比较中间值和目标值的大小关系，排除一半的数据。</li><li>数据量较大：如果数据量较小，直接遍历整个数组即可。但如果数据量较大，二分算法可以节省大量时间复杂度，使算法效率更高。</li><li>没有重复元素：二分算法是基于元素唯一性的。如果存在重复元素，可能会出现一些问题，例如无法确定查找结果的唯一性。</li><li>可以随机访问元素：二分算法需要能够随机访问数组中的元素。如果数据结构不支持随机访问，例如链表，二分算法就无法使用。</li></ol></blockquote><hr><h2 id="模板代码"><a href="#模板代码" class="headerlink" title="模板代码"></a><strong>模板代码</strong></h2><p>题目：</p><blockquote><p><em>一道二分查找题</em></p><p>题干：满足 N ! 的末尾恰好有 K 个 0 的最小的 N 是多少?如果这样的 <em>N</em> 不存在输出 −1。</p><p>输入格式：一个整数K</p><p>输出格式：一个整数代表答案</p><p>样例输入：2</p><p>样例输出：10</p></blockquote><p>标准答案：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Scanner;<br><span class="hljs-comment">// 1:无需package</span><br><span class="hljs-comment">// 2: 类名必须Main, 不可修改</span><br> <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-comment">//求阶乘末尾0的个数其实就是求阶乘因子中5的个数</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-type">long</span> <span class="hljs-title function_">calc</span><span class="hljs-params">(<span class="hljs-type">long</span> x)</span> &#123;<br>        <span class="hljs-type">long</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span>(x!=<span class="hljs-number">0</span>) &#123;<br>            res=res+x/<span class="hljs-number">5</span>;<br>            x/=<span class="hljs-number">5</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">//二分查找</span><br>        Scanner scanner=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">long</span> k=scanner.nextLong();<br>        <span class="hljs-type">long</span> l=<span class="hljs-number">1</span>,r=Long.MAX_VALUE-<span class="hljs-number">5</span>;<span class="hljs-comment">//l为最左边，r为最右边</span><br>    <br>        <span class="hljs-keyword">while</span>(l&lt;r) &#123;<br>            <span class="hljs-type">long</span> mid=(l+r)/<span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span>(k&lt;=calc(mid)) &#123;<br>                r=mid;<br>            &#125;<span class="hljs-keyword">else</span> &#123;<br>                l=mid+<span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(calc(r)!=k) &#123;<br>            System.out.print(-<span class="hljs-number">1</span>);<br>        &#125;<span class="hljs-keyword">else</span> &#123;<br>            System.out.print(r);<br>        &#125;<br>    <br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>答案代码中，关于二分查找的分析：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//二分查找规定要求f(x)中的x是有序的</span><br><br><span class="hljs-comment">//规定一个最小值和最大值的指针，但要注意后续两者相加后是否会超过基本数据类型范围上限</span><br><span class="hljs-comment">//在此题中，l为最左边下标，r为最右边下标</span><br><span class="hljs-type">long</span> l=<span class="hljs-number">1</span>,r=Long.MAX_VALUE-<span class="hljs-number">5</span>;<br><br><span class="hljs-comment">//当左下标小于右下标时循环</span><br><span class="hljs-keyword">while</span>(l&lt;r) &#123;<br><span class="hljs-comment">//每次循环之前算出中下标</span><br><span class="hljs-type">long</span> mid=(l+r)/<span class="hljs-number">2</span>;<br><br><span class="hljs-comment">//如果中下标的值，在题目要求中偏小，把左下标的值更新为中下标</span><br><span class="hljs-keyword">if</span>(k&lt;=calc(mid)) &#123;<br>r=mid;<br>&#125;<span class="hljs-keyword">else</span> &#123; <span class="hljs-comment">//如果偏大，把右下标的值，更新为左下标</span><br>l=mid+<span class="hljs-number">1</span>;<br>&#125;<br>&#125;<br><br></code></pre></td></tr></table></figure><hr><h2 id="关于被查找的数组元素总数奇偶性的理解"><a href="#关于被查找的数组元素总数奇偶性的理解" class="headerlink" title="关于被查找的数组元素总数奇偶性的理解"></a><strong>关于被查找的数组元素总数奇偶性的理解</strong></h2><p>GPT关于被查找的数组元素个数奇偶性的理解是：</p><p>一句话就是，以上模板无论数组元素个数是奇是偶都适用，不过当元素个数为奇则最后只会剩下一个元素没有争议；元素个数为偶时最后剩下两个元素，两者都有可能是要找的目标</p><blockquote><p>这个二分查找算法是适用于所有元素个数为正整数的有序数组，无论数组元素个数是奇数还是偶数都可以使用这个模板。<br>对于奇数个元素的数组，最后剩下的中间元素就是要查找的元素；<br>对于偶数个元素的数组，则最后剩下的两个中间元素中任意一个都可能是要查找的元素。</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>算法</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>野人</title>
-    <link href="/2023/04/06/%E9%87%8E%E4%BA%BA/"/>
-    <url>/2023/04/06/%E9%87%8E%E4%BA%BA/</url>
+    <link href="/2023/04/06/%E8%AF%97/%E9%87%8E%E4%BA%BA/"/>
+    <url>/2023/04/06/%E8%AF%97/%E9%87%8E%E4%BA%BA/</url>
     
     <content type="html"><![CDATA[<h1 id="野人"><a href="#野人" class="headerlink" title="野人"></a>野人</h1><p>掸去身上尘埃</p><p>回到潮湿的温暖洞穴</p><p>野人每个毛孔都舒张开来</p><p>感受到了自己存在</p><br/><p>身上的伤口还略微作痛</p><p>但我们不能用爱情来疗伤</p><p>好在尚且不算饥饿</p><p>今天狩猎的收获寥寥</p><p>2021.5.17</p>]]></content>
     
@@ -270,9 +213,47 @@
   
   
   <entry>
+    <title>镜子</title>
+    <link href="/2023/04/06/%E8%AF%97/%E9%95%9C%E5%AD%90/"/>
+    <url>/2023/04/06/%E8%AF%97/%E9%95%9C%E5%AD%90/</url>
+    
+    <content type="html"><![CDATA[<h1 id="镜子"><a href="#镜子" class="headerlink" title="镜子"></a>镜子</h1><p>世界上的一切都是镜子</p><p>物质的映出现实的自己</p><p>虚幻的映出理想的自己</p><p>远方是天而脚下的是地</p><br/><p>我是一只徜徉在镜的鱼</p><p>梦想是此生只照哈哈镜</p><p>世界很大前途悠远无尽</p><p>漫看云朵卷舒怡然自乐</p><p>2021年05月13日</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>诗</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>路过科师大很多地方</title>
+    <link href="/2023/04/06/%E8%AF%97/%E8%B7%AF%E8%BF%87%E7%A7%91%E5%B8%88%E5%A4%A7%E5%BE%88%E5%A4%9A%E5%9C%B0%E6%96%B9/"/>
+    <url>/2023/04/06/%E8%AF%97/%E8%B7%AF%E8%BF%87%E7%A7%91%E5%B8%88%E5%A4%A7%E5%BE%88%E5%A4%9A%E5%9C%B0%E6%96%B9/</url>
+    
+    <content type="html"><![CDATA[<h1 id="路过科师大很多地方"><a href="#路过科师大很多地方" class="headerlink" title="路过科师大很多地方"></a>路过科师大很多地方</h1><p>我们在江西科技师范大学谈恋爱</p><p>在百鸣路牵手</p><p>还在逸夫楼接吻</p><p>以及在河畔谈文学</p><p>约会的时间总过得很快</p><br/><p>在江西科技师范大学谈恋爱</p><p>我们不是第一个</p><p>当依偎的时候 当拥抱的时候 当亲吻的时候</p><p>我觉得连蚂蚁都在谈恋爱</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>诗</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>站在阳光里</title>
-    <link href="/2023/04/06/%E7%AB%99%E5%9C%A8%E9%98%B3%E5%85%89%E9%87%8C/"/>
-    <url>/2023/04/06/%E7%AB%99%E5%9C%A8%E9%98%B3%E5%85%89%E9%87%8C/</url>
+    <link href="/2023/04/06/%E8%AF%97/%E7%AB%99%E5%9C%A8%E9%98%B3%E5%85%89%E9%87%8C/"/>
+    <url>/2023/04/06/%E8%AF%97/%E7%AB%99%E5%9C%A8%E9%98%B3%E5%85%89%E9%87%8C/</url>
     
     <content type="html"><![CDATA[<h1 id="站在阳光里"><a href="#站在阳光里" class="headerlink" title="站在阳光里"></a>站在阳光里</h1><p>站在阳光里</p><p>我会不会 过度思念你的缘故</p><p>消融在这暖暖阳光</p><p>呆看飞絮红尘</p>]]></content>
     
@@ -289,9 +270,28 @@
   
   
   <entry>
+    <title>秋水</title>
+    <link href="/2023/04/06/%E8%AF%97/%E7%A7%8B%E6%B0%B4/"/>
+    <url>/2023/04/06/%E8%AF%97/%E7%A7%8B%E6%B0%B4/</url>
+    
+    <content type="html"><![CDATA[<h1 id="秋水"><a href="#秋水" class="headerlink" title="秋水"></a>秋水</h1><p>秋水是一种纯洁的颜料，涂抹你的心里，洁白</p><p>我站在小雨的九月，不会祈求命运赐予任何</p><p>抓住一颗星星，我要送给我爱的人</p><p>搏得一朵鲜花，你是一种无言的芬芳</p><p>磨碎星星和花，和我的喜悦的心情</p><p>带去沉默的信，和一满瓶纯洁的秋水</p><p>愿爱人喜欢这一切，绘制在青空的蓝色纸张</p><p>而我也会握你的手，轻轻呼唤</p><p>一起洗礼吧，在雨中，爱人</p><p>你愿意吗</p><p>2020.9.16</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>诗</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>remix使用</title>
-    <link href="/2023/04/06/remix%E4%BD%BF%E7%94%A8/"/>
-    <url>/2023/04/06/remix%E4%BD%BF%E7%94%A8/</url>
+    <link href="/2023/04/06/Solidity/remix%E4%BD%BF%E7%94%A8/"/>
+    <url>/2023/04/06/Solidity/remix%E4%BD%BF%E7%94%A8/</url>
     
     <content type="html"><![CDATA[<h1 id="Remix使用"><a href="#Remix使用" class="headerlink" title="Remix使用"></a>Remix使用</h1><h2 id="左侧栏"><a href="#左侧栏" class="headerlink" title="左侧栏"></a><strong>左侧栏</strong></h2><p>文件夹：</p><ol><li>contracts：放智能合约</li><li>scripts：运行智能合约的脚本</li><li>tests：跑智能合约单元测试用</li></ol><p>SOLIDITY COMPILER：编译器</p><ol><li>COMPILER选项：选择编译器版本</li><li>LANGUAGE选项：选择计算机语言</li><li>EVM VERSION选项：运行环境的选择，有许多版本，每个都行，随便选，一般选default默认版本</li><li>Auto compile勾选：自动编译，修改代码之后会对新的代码自动进行编译</li><li>Enable optimization勾选：优化代码，一般不用改，默认200，但是如果智能合约使用的人很多建议改大一点到1000以上，太小的话gas会很高</li><li>Hide warnings勾选：是否隐藏警告，不用管</li><li>Compile按钮：编译。在文件中选一个智能合约文件，然后点这个按钮可以对它编译</li></ol><p>DEPLOY&amp;RUN TRANSACTIONS：智能合约所部署的环境的相关</p><ol><li>ENVIRONMENT选项：有很多环境可选，JavaScrupt VM是JS虚拟机，运行在本机内存，而Injected Web3就是运行在以太坊测试网，Web3 Provider是本地或者其他网络</li><li>ACCOUNT选项：账户选项，默认会生成十几个账户，每个账户10个以太坊</li><li>GAS LIMIT填空栏：气体限制选择，不知道有啥用</li><li>Deplay按钮：部署合约的按钮，在部署之前，在按钮上面的CONTRACT上选择需要部署的合约，部署成功之后终端里会有一些信息</li></ol>]]></content>
     
@@ -309,8 +309,8 @@
   
   <entry>
     <title>remix本地安装</title>
-    <link href="/2023/04/06/remix%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85/"/>
-    <url>/2023/04/06/remix%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85/</url>
+    <link href="/2023/04/06/Solidity/remix%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85/"/>
+    <url>/2023/04/06/Solidity/remix%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85/</url>
     
     <content type="html"><![CDATA[<h1 id="reminx本地安装"><a href="#reminx本地安装" class="headerlink" title="reminx本地安装"></a>reminx本地安装</h1><h2 id="概论"><a href="#概论" class="headerlink" title="概论"></a><strong>概论</strong></h2><ol><li>remix分为后端remix-projrct和前端remixd，后端负责编译等事务的实现，前端负责连接网页与本地文件</li><li>先安装前端再安装后端</li><li>remix-project项目地址：<a href="https://github.com/ethereum/remix-project">https://github.com/ethereum/remix-project</a></li><li>remixd项目地址：<a href="https://github.com/ethereum/remixdb">https://github.com/ethereum/remixdb</a></li></ol><hr><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a><strong>部署</strong></h2><ol><li>用docker部署remix-project，先安装：<ol><li>正常来说是这样的命令：docker pull remixproject&#x2F;remix-ide:latest</li><li>对mac，比较特殊，要加一点platform信息，运行这条即可：docker run -p 8080:80 –platform linux&#x2F;amd64 remixproject&#x2F;remix-ide:latest</li></ol></li><li>启动后台remix-project：docker run -p 8080:80 remixproject&#x2F;remix-ide:latest</li><li>此时能通过localhost:8080访问remixIDE，但是为了连接本地服务器需要安装前端remixd</li><li>npm安装remixd，安装过程会有几号之后只能用https的警告，只是npm的官方通知不用理会：npm install remixd -g</li><li>启动remixd，其中中间-s的属性值是本地文件目录可以自行修改，-ide的属性值是访问网址，其中端口号要和安装remix-project时指定的端口相同：remixd -s &#x2F;Users&#x2F;dal&#x2F;Downloads&#x2F;solidity –remix-ide <a href="http://localhost:8080/">http://localhost:8080</a></li><li>尽情使用吧，本地编辑完合约，然后打开网页部署，记得可以在docker客户端里检查remix-project的运行情况确保在后台运行才能打开IDE</li></ol><hr><h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a><strong>运行</strong></h2><ol><li>先去docker客户端里运行remixproject&#x2F;remix-ide:latest</li><li>然后启动remix，其中注意本地文件夹目录是可以修改的，其实要修改网址和端口号也是可以的，但是要在安装remix-project那步的时候准备好：remixd -s &#x2F;Users&#x2F;dal&#x2F;Downloads&#x2F;solidity –remix-ide <a href="http://localhost:8080/">http://localhost:8080</a></li><li>访问remix本地客户端：<a href="http://localhost:8080/">http://localhost:8080</a></li></ol>]]></content>
     
@@ -328,8 +328,8 @@
   
   <entry>
     <title>极简Solidity语法总结</title>
-    <link href="/2023/04/06/%E6%9E%81%E7%AE%80Solidity%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/"/>
-    <url>/2023/04/06/%E6%9E%81%E7%AE%80Solidity%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/</url>
+    <link href="/2023/04/06/Solidity/%E6%9E%81%E7%AE%80Solidity%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/"/>
+    <url>/2023/04/06/Solidity/%E6%9E%81%E7%AE%80Solidity%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/</url>
     
     <content type="html"><![CDATA[<h1 id="极简Solidity语法总结"><a href="#极简Solidity语法总结" class="headerlink" title="极简Solidity语法总结"></a>极简Solidity语法总结</h1><h2 id="常规语法"><a href="#常规语法" class="headerlink" title="常规语法"></a><strong>常规语法</strong></h2><p>文件结构：【预编译导入，合约库接口】</p><ol><li>预编译：指定编译器版本，语法为 <code>pragma Solidity ^0.4.19;</code>，^是可选的脱字符号，意为这是此主版本号的最新版本</li><li>导入：导入的是其它solidity文件，语法 <code>import ‘xxx.sol’;</code>，还可以用“&#x2F;”引用目录，“.”符号引用当前目录，“..”引用父目录</li><li>合约：<code>contract 合约名 [is 继承语句] &#123;xxx&#125;</code></li><li>库：<code>library 库名 &#123;xxx&#125;</code></li><li>接口：<code>interface 接口名&#123;xxx&#125;</code></li><li>函数：<code>function 函数名([形参表列]) 限定符 [return语句] &#123;xxx&#125;</code></li></ol><p>注释：</p><ol><li>单行注释 <code>//</code>，多行注释 <code>/* */</code></li></ol><p>自定义数据类型：</p><ol><li>结构体：语法为 <code>struct 结构体名&#123;数据类型 变量名; \n 数据类型 变量名; &#125;</code>，实例化一个结构体语法是 <code>结构体名 = 变量名(”ritesh”,10,true, new unit[](3));</code></li></ol><p>基本数据类型：</p><ol><li>概述：基本数据类型还分为值类型和引用类型两种，前者符号memory后者storage，但不是运行在pc里而是EVM网络，值类型存在节点计算机内存里，用完就销毁，索引的时候也是和其它计算机语言一样根据标识符寻找，引用类型经常又称状态变量【应该是借用自函数式编程里面的类似概念】，存储在区块链上网络上，永久存在，根据指针索引。即函数外部声明的变量存储在stoage，内部变量存储在memory</li><li>对引用类型的变量（数组、结构体、字符串、映射），在声明的时候必须指定存储位置</li><li>值类型：<ol><li>布尔型 <code>boll</code>，不能转换为整型，默认false</li><li>无符整型 <code>uint</code>和有符整型 <code>int</code>按8递加，例如最低 <code>uint 8</code>，最高 <code>uint 256</code>，int同</li><li>地址类型 <code>address</code>，20字节，有隐式的balance属性和发送以太币的transfer函数、返回发送以太币是否成功布尔值的send函数、调用合约函数的Call函数、DelegateCall函数、Callcode函数</li><li>数组类型可以任意数据类型，声明语法 <code>数据类型[数量] 数组名</code>，初始化方法在声明的时候 <code>int[5] age = [1,2,3,4,5];</code>，或者先声明 <code>int[5] = 数组名;</code>，再写 <code>数组名 = [1,2,3,4,5];</code>。<ol><li>动态数组：声明的时候不写有多少元素个数 <code>int[] 数组名;</code>，初始化的时候用new关键字 <code>数组名 = new int[] (5);</code></li><li>字节数组：可以容纳任意数量字符的动态数组，声明语法和初始化语法与动态数组一样 <code>bytes[] 数组名;</code>和 <code>数组名 = new bytes[] (5);</code>另外有一种初始化语法是声明语句之后使用赋值语句 <code>数组名 = “xxx”;</code></li><li>字符串数组</li><li>数组里有三个隐式成员属性，但不是每种数组都具有，index只有字符串数组没有，但只有动态数组、固定数组、字节型数组支持写入指定元素index属性，push只有动态数组支持，length只有字符串数组没有，但只有动态数组和字节型数组支持写入此属性</li></ol></li><li>枚举类型声明语法 <code>enum 变量名&#123;枚举值1,枚举值2&#125;</code>，初始化语法太抽象了没看懂，枚举类型不能在函数中声明只能在合约中声明</li><li>字节类型声明的时候要写多少个字节数量，示例 <code>bytes 变量名;</code>，默认值0x00，如果byte1也可以用byte表示，可以用按位操作符</li><li>枚举类型至少声明一个枚举值，第一个编号0，第二个编号1，以此类推</li></ol></li><li>引用类型有数组、结构体、字符串、映射，其中映射就是键值对，声明语法 <code>Mapping (键数据类型 =&gt; 值数据类型) 变量名;</code>，读值语法 <code>变量名[序号]</code>，写值语法变量名 <code>[序号] = &lt;&lt;值&gt;&gt;</code>，映射类型调用是要gas的所以使用时要避免迭代和循环</li><li>字面量：不同字面量的表示方法不同，整型没什么，字符串型单引号或者双引号，地址型0x开头，十六进制数用hex开头并用双引号包裹 <code>hex”1A2B3F”</code>，十进制小数直接点号即可 <code>3.14</code></li></ol><p>运算符：</p><ol><li>比较：相等 <code>==</code>，不相等 <code>!=</code>，大于 <code>&gt;</code>，小于 <code>&lt;</code>，大于等于 <code>&gt;=</code>，小于等于 <code>&lt;=</code></li><li>逻辑：与 <code>&amp;&amp;</code>或 <code>||</code>非 <code>!</code></li></ol><p>程序结构：</p><ol><li>选择：<code>if(条件句1) &#123;xxx&#125;   else if(条件句2) &#123;xxx&#125;   else&#123;xxx&#125;</code></li><li>循环：<code>while(条件句) &#123;xxx&#125;</code>，<code>for(初始化;条件句;自增减) &#123;xxx&#125;</code>，<code>do&#123;xxx&#125;    while(条件句)</code></li><li>break和continue：和C一样</li></ol><p>返回：</p><ol><li>如果函数要有返回值，必须在形参和大括号之间写 <code>returns(返回值类型)</code>，注意有个s，然后在函数体内写return语句 <code>return 变量名;</code>，第二个方法可以允许写多个返回值，这叫元组返回</li></ol><p>面向对象：</p><ol><li>封装：Solidity通过可见性修改器，即限定符来实现封装</li><li>继承：继承会继承所有public和internal的状态变量、函数、修改器、事件，写法是写合约的时候使用is关键字 <code>contract 子合约名 is 父合约名&#123;xxx&#125;</code>，多重继承遵循C3线性化顺序，Solidity合约里所有函数全部具有虚函数性，对没有按默认顺序继承的合约一样可以用 <code>合约名.函数名()</code>来调用函数</li><li>多态：多态即重载，Solidity分函数和合约两种重载，函数多态写法直接写同名函数即可，合约多态实现方法是合约继承</li></ol><p>构造函数：想重写构造函数直接写一个和合约名一样的函数即可，但限定符只能是public或internal，构造函数没有返回值，只在合约部署的时候执行一次【这里也是Solidity和其它计算机语言的区别，前者编译的是区块链上永久存在的字节码，其它语言编译的只是运行的时候用完就丢的二进制编码】。0.4.22之后这种写法被废除，必须使用构造器constructor(),写法是 <code>constructor(…) &#123; … &#125;</code>，不用function，中间也可以加函数限定符public, internal，但是如果合约是继承自父合约，“在派生合约构造函数中添加基合约所需要的参数”，写法是 <code>constructor(…)constructor2(…) &#123; … &#125;</code>，其中 <code>constructor2(…)</code>是父合约的构造函数。两个构造函数都需要指定可见性限定符。</p><p>错误处理：以前只用throw语句进行错误处理，会消耗掉所有gas然后把状态回退到刚初始化，所以4.10版本之后被标记过时，现在使用几个错误处理函数，require函数写在函数体的刚开始，语法 <code>require(条件句);</code>条件句为true接着运行false抛出异常；assert函数语法和作用和require函数一样，用于require函数之后的第二次再判断，但是和throw语句一样会消耗掉所有gas然后把状态回退到刚初始化；revert()语法 <code>assert();</code>作用类似循环体中的berak语句，一般配合if条件判断，满足条件就直接break整个函数体</p><hr><h2 id="语言特性"><a href="#语言特性" class="headerlink" title="语言特性"></a><strong>语言特性</strong></h2><ol><li><p>以太坊自然规范注释法：格式为 <code>/// @xxx 注释</code>文本，其中 <code>xxx</code>如果是title意为标题，author意为作者，notice用于解释函数或者合约的作用，dev用于向开发者诉说的话，param用于解释关于形参的信息，return用于解释返回值的信息</p></li><li><p>var类型：隐式类型变量，只能在函数体中使用，会通知编译器为第一次赋予它的值的类型，一旦通知不可修改</p></li><li><p>Solidity不强制规定变量声明和使用的顺序，因为编译器生成字节码的时候第一步会先提取所有变量声明放在顶部</p></li><li><p>数据位置：因为Solidity运行在EVM虚拟机上，所以变量有不同存放位置，状态变量放在存储位置，其永久存在所有节点上，内存位置是所有函数都能访问的本地内存，函数执行完就销毁，传参放在调用位置上，使用以太坊指令集的变量和中间值会存在堆栈位置</p></li><li><p>fallback函数：无名函数，如果调用的函数根本不存在或合约没有收到任何数据例如只收到打过来的以太币时触发，没有名字，无法显式调用，没有传参和返回值，默认消耗2300gas，如果要用它接收以太币要标记payable</p></li><li><p>修改器：修改器专门承接判断某些值以及要不要执行函数这些工作，语法 <code>modifier 修改器名()&#123;xxx&#125;</code>，一般里面接if判断句，其中有个语法糖，<code>_</code>意为替代目标函数，使用修改器写函数首部的形参和大括号之间，语法 <code>function 函数名() 修改器名() 限定符 &#123;xxx&#125;</code></p></li><li><p>事件：链上有一个特殊数据结构叫日志，专门用来记载区块中发生的事件信息，智能合约不能访问，其提供一个事件接口，事件是一个触发器，条件发声就存储抛出异常到交易日志中，声明语法 <code>event 事件名(抛出异常);</code>，其中抛出异常可以是数据类型或者字符串，事件声明之后在整个合约范围内有效，使用方法在函数里写 <code>事件名(所要抛出异常);</code>即可</p></li><li><p>隐式转换：支持从较小类型到较大类型的隐式转换，直接赋值即可</p></li><li><p>显式转换：不鼓励显式转换因为容易出错，但是提供几个显式转换函数，ConvertionExplicitUINT8toUINT256函数、ConvertionExplicitUINT256toUINT8函数、ConvertionExplicitUINT256toUINT81函数分别按函数名字面意思提供从前到后的类型转换，还有一个conversions函数不太明白</p></li><li><p>散列函数：solidity提供散列函数将输入转换为散列，SHA2算法是sha256()，SHA3算法是sha3()和keccak256()，后者是SHA3算法的别名。语法 <code>sha256(”r”)</code>、<code>sha3(”r”)</code>和 <code>keccak256(”r”)</code></p></li><li><p>地址数据类型：外部地址和合约地址都有5个全局函数和一个余额成员变量</p><ol><li>ddress.transfer(uint256 amount)：向指定地址发送以wei做单位的以太币，返回成功与否的布尔值</li><li>address.send(uint256 amount)：向指定地址发送以wei做单位的以太币，返回成功与否的布尔值</li><li>address.call(…)：调用低级别的call函数，返回成功与否的布尔值</li><li>address.callcode(…)：调用低级别的callcode函数，返回成功与否的布尔值</li><li>address.delegatecall(…)：调用低级别的delegatecall函数，返回成功与否的布尔值</li></ol></li><li><p>合约数据类型：合约数据类型提供一个this成员和selfdestruct函数，接收一个地址把钱全部转过去</p></li><li><p>合约内调用已创建合约的两种方法：如果是同一个文件里写了两个合约，第二个合约里用new创建一个新的对象，语法 <code>Hellw world myobj = new Helloworld();</code>。如果想要调用已经部署过的合约，直接把这个合约的地址赋值给地址类型数据即可。</p></li><li><p>方法覆盖对同名函数追加view关键字，这个关键字意思是承诺不修改状态，语法 <code>function 函数名() public view returns(uint)&#123; &#125;</code></p></li><li><p>抽象合约：抽象合约的用途只有被继承，无法创建合约实例，语法是依旧正常的合约结构，但是所有的函数都没有大括号的函数体只有一个分号，例如 <code>function 函数名(形参) public;</code></p></li><li><p>截断模式和检查模式：0.8的新特性，前者使用unchecked关键字后者使用checked，在算数运算中，后者会对运算结果进行溢出（超过数据结构定义的数字上下限）检查，如果超过就抛出异常然后回退，而前者不会，所以前者需要调用第三方库如openzeppelin的safemath.sol。语法上是 <code>unchecked&#123;xxx运算语句&#125;</code>和 <code>checked&#123;xxx运算语句&#125;</code></p></li><li><p>内联汇编：编译的时候solc会优化二进制代码，但有时候尤其是循环语句的时候这种优化是负优化，使用内联汇编语句可以阻止优化</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs solidity">assembly&#123;<br> 内联汇编语句<br>&#125;<br></code></pre></td></tr></table></figure></li><li><p>abi编码函数：</p></li><li><p>区块和交易全局变量：因为合约无权访问整个账本所以提供一些关于区块和交易的全局变量以供调用，并且没有在合约当中显式声明</p></li></ol><table><thead><tr><th>变量名称</th><th>描述</th></tr></thead><tbody><tr><td>block.coinbase(address)</td><td>与etherbase相同，指矿工的地址</td></tr><tr><td>block.difficulty(uint)</td><td>当前区块难度等级</td></tr><tr><td>block.gaslimit(unit)</td><td>当前区块gas限制</td></tr><tr><td>block.number(unit)</td><td>顺序表示的区块编号</td></tr><tr><td>block.timestamp(unit)</td><td>区块创建时间</td></tr><tr><td>msg.data(bytes)</td><td>与创建交易相关的函数及其参考信息</td></tr><tr><td>msg.gas(uint)</td><td>执行交易后未花费gas</td></tr><tr><td>msg.sender(address)</td><td>调用函数的地址</td></tr><tr><td>msg.sig(bytes4)</td><td>函数标识符使用散列函数签名后的前四个字节</td></tr><tr><td>msg.value(uint)</td><td>随交易发送的以太币数量，以wei作为单位</td></tr><tr><td>now(uint)</td><td>当前时间</td></tr><tr><td>tx.gasprice(uint)</td><td>调用者准备支付的每一种gas单位下的gas价格</td></tr><tr><td>tx.origin(address)</td><td>交易的发起者</td></tr><tr><td>block.blockhash(uint blockNumber)</td><td>包含交易的区块散列值</td></tr><tr><td>returns(bytes32)</td><td>包含交易的区块散列值</td></tr><tr><td>string.concat</td><td>0.8.13版本的新全局变量（可能有误）</td></tr><tr><td>abi.encodeCall</td><td>0.8.13版本的新全局变量（可能有误）</td></tr></tbody></table>]]></content>
     
