@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>弹尽粮绝</title>
+    <link href="/2023/10/11/%E9%9A%8F%E8%AE%B0/%E5%BC%B9%E5%B0%BD%E7%B2%AE%E7%BB%9D/"/>
+    <url>/2023/10/11/%E9%9A%8F%E8%AE%B0/%E5%BC%B9%E5%B0%BD%E7%B2%AE%E7%BB%9D/</url>
+    
+    <content type="html"><![CDATA[<p>同一个时刻对不同人的意义当然是不同的，今晚我的身边充满了悠闲看书的人，只有我在书山卷海里充满绝望情绪。<br>在平静的外表之下谁知道我已经陷入弹尽粮绝的地步了，在同学眼里我可能是神秘的独来独往者，沉默之下悄然完成一切学习任务，也不会想到我的论文选题难以完成，11408复习时间紧张举步维艰。在考研、论文的重压下，数学一、英语单词、408还有政治在狠狠压迫着我的神经和精神。<br>我不知道这是怎么了，就像一个被警察追赶的无法者，暂时甩远了某条deadline，现在能喘口气，可是我还不能停息，若不疯狂奔跑做好准备，下一次deadline来之前，会失去一切。<br>这样的精神显然是不正常的， 重压犹如引力一般一波接一波无处不在又连绵不绝，我可以怎样呢？<br>我可以用我的意志战胜克服这一切？我说……这是最后的挑战了，我的宝贝，我的笔，我的一切——<br>我将与你，并肩作战，直到最后一刻——直到，我们完全胜利。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>随记</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>状态转移方程中的状态究竟是指什么</title>
     <link href="/2023/08/08/%E7%AE%97%E6%B3%95/%E7%8A%B6%E6%80%81%E8%BD%AC%E7%A7%BB%E6%96%B9%E7%A8%8B%E4%B8%AD%E7%9A%84%E7%8A%B6%E6%80%81%E7%A9%B6%E7%AB%9F%E6%98%AF%E6%8C%87%E4%BB%80%E4%B9%88/"/>
     <url>/2023/08/08/%E7%AE%97%E6%B3%95/%E7%8A%B6%E6%80%81%E8%BD%AC%E7%A7%BB%E6%96%B9%E7%A8%8B%E4%B8%AD%E7%9A%84%E7%8A%B6%E6%80%81%E7%A9%B6%E7%AB%9F%E6%98%AF%E6%8C%87%E4%BB%80%E4%B9%88/</url>
@@ -61,63 +80,6 @@
   
   
   <entry>
-    <title>二分查找</title>
-    <link href="/2023/04/06/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
-    <url>/2023/04/06/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</url>
-    
-    <content type="html"><![CDATA[<h1 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a><strong>概述</strong></h2><hr><p><strong>二分算法解决问题的使用条件</strong></p><ol><li>有序：数据必须是有序的，不管是顺序表还是链，这不必多说</li><li>二段性：二分算法的判断条件必须具有二段性，通常是 “&gt;” 或 “&lt;”，人话说就是可以分为两部分，也可以说“查找的目标元素可以进行比较操作”</li></ol><blockquote><p><em>在算法题中，用二分算法解决问题的充分条件是什么？</em></p><ol><li>数据具有单调性：二分算法适用于有序数组或者单调性强的问题。在这种情况下，可以通过比较中间值和目标值的大小关系，排除一半的数据。</li><li>数据量较大：如果数据量较小，直接遍历整个数组即可。但如果数据量较大，二分算法可以节省大量时间复杂度，使算法效率更高。</li><li>没有重复元素：二分算法是基于元素唯一性的。如果存在重复元素，可能会出现一些问题，例如无法确定查找结果的唯一性。</li><li>可以随机访问元素：二分算法需要能够随机访问数组中的元素。如果数据结构不支持随机访问，例如链表，二分算法就无法使用。</li></ol></blockquote><hr><h2 id="模板代码"><a href="#模板代码" class="headerlink" title="模板代码"></a><strong>模板代码</strong></h2><p>题目：</p><blockquote><p><em>一道二分查找题</em></p><p>题干：满足 N ! 的末尾恰好有 K 个 0 的最小的 N 是多少?如果这样的 <em>N</em> 不存在输出 −1。</p><p>输入格式：一个整数K</p><p>输出格式：一个整数代表答案</p><p>样例输入：2</p><p>样例输出：10</p></blockquote><p>标准答案：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Scanner;<br><span class="hljs-comment">// 1:无需package</span><br><span class="hljs-comment">// 2: 类名必须Main, 不可修改</span><br> <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-comment">//求阶乘末尾0的个数其实就是求阶乘因子中5的个数</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-type">long</span> <span class="hljs-title function_">calc</span><span class="hljs-params">(<span class="hljs-type">long</span> x)</span> &#123;<br>        <span class="hljs-type">long</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span>(x!=<span class="hljs-number">0</span>) &#123;<br>            res=res+x/<span class="hljs-number">5</span>;<br>            x/=<span class="hljs-number">5</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">//二分查找</span><br>        Scanner scanner=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">long</span> k=scanner.nextLong();<br>        <span class="hljs-type">long</span> l=<span class="hljs-number">1</span>,r=Long.MAX_VALUE-<span class="hljs-number">5</span>;<span class="hljs-comment">//l为最左边，r为最右边</span><br>    <br>        <span class="hljs-keyword">while</span>(l&lt;r) &#123;<br>            <span class="hljs-type">long</span> mid=(l+r)/<span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span>(k&lt;=calc(mid)) &#123;<br>                r=mid;<br>            &#125;<span class="hljs-keyword">else</span> &#123;<br>                l=mid+<span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(calc(r)!=k) &#123;<br>            System.out.print(-<span class="hljs-number">1</span>);<br>        &#125;<span class="hljs-keyword">else</span> &#123;<br>            System.out.print(r);<br>        &#125;<br>    <br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>答案代码中，关于二分查找的分析：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//二分查找规定要求f(x)中的x是有序的</span><br><br><span class="hljs-comment">//规定一个最小值和最大值的指针，但要注意后续两者相加后是否会超过基本数据类型范围上限</span><br><span class="hljs-comment">//在此题中，l为最左边下标，r为最右边下标</span><br><span class="hljs-type">long</span> l=<span class="hljs-number">1</span>,r=Long.MAX_VALUE-<span class="hljs-number">5</span>;<br><br><span class="hljs-comment">//当左下标小于右下标时循环</span><br><span class="hljs-keyword">while</span>(l&lt;r) &#123;<br><span class="hljs-comment">//每次循环之前算出中下标</span><br><span class="hljs-type">long</span> mid=(l+r)/<span class="hljs-number">2</span>;<br><br><span class="hljs-comment">//如果中下标的值，在题目要求中偏小，把左下标的值更新为中下标</span><br><span class="hljs-keyword">if</span>(k&lt;=calc(mid)) &#123;<br>r=mid;<br>&#125;<span class="hljs-keyword">else</span> &#123; <span class="hljs-comment">//如果偏大，把右下标的值，更新为左下标</span><br>l=mid+<span class="hljs-number">1</span>;<br>&#125;<br>&#125;<br><br></code></pre></td></tr></table></figure><hr><h2 id="关于被查找的数组元素总数奇偶性的理解"><a href="#关于被查找的数组元素总数奇偶性的理解" class="headerlink" title="关于被查找的数组元素总数奇偶性的理解"></a><strong>关于被查找的数组元素总数奇偶性的理解</strong></h2><p>GPT关于被查找的数组元素个数奇偶性的理解是：</p><p>一句话就是，以上模板无论数组元素个数是奇是偶都适用，不过当元素个数为奇则最后只会剩下一个元素没有争议；元素个数为偶时最后剩下两个元素，两者都有可能是要找的目标</p><blockquote><p>这个二分查找算法是适用于所有元素个数为正整数的有序数组，无论数组元素个数是奇数还是偶数都可以使用这个模板。<br>对于奇数个元素的数组，最后剩下的中间元素就是要查找的元素；<br>对于偶数个元素的数组，则最后剩下的两个中间元素中任意一个都可能是要查找的元素。</p></blockquote>]]></content>
-    
-    
-    <categories>
-      
-      <category>算法</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Vim极简命令手册</title>
-    <link href="/2023/04/06/Vim&amp;&amp;Neovim/Vim%E6%9E%81%E7%AE%80%E5%91%BD%E4%BB%A4%E6%89%8B%E5%86%8C/"/>
-    <url>/2023/04/06/Vim&amp;&amp;Neovim/Vim%E6%9E%81%E7%AE%80%E5%91%BD%E4%BB%A4%E6%89%8B%E5%86%8C/</url>
-    
-    <content type="html"><![CDATA[<h1 id="Vim极简命令手册"><a href="#Vim极简命令手册" class="headerlink" title="Vim极简命令手册"></a>Vim极简命令手册</h1><h2 id="前言和概述"><a href="#前言和概述" class="headerlink" title="前言和概述"></a>前言和概述</h2><p>作为一个大学生，在vim学习中感到初学者平常学一两个命令是没用的，vim的入门第一步必须快速掌握一批能够足够日常编辑文本使用的命令，如增删改查、跳转光标……这样才能够让vim在工作学习中成功发动，进而在使用中熟能生巧、拓展学习其他的快捷键。</p><p>以下都是在正常模式下的命令，即按下Esc所进入的模式，这个模式是Vim的精要，掌握了这些移动光标、切换插入模式、复制粘贴、增改删查、退出，基本能入门使用Vim。</p><hr><h2 id="正常模式"><a href="#正常模式" class="headerlink" title="正常模式"></a>正常模式</h2><p>定位光标：</p><ol><li>逐个字符移动：hjkl，左下上右，不用去死记，有个简单的记忆方法，这四个字母恰好是键盘上的同一排，这排字母中最左边的h和最右边的h和l恰好对应是左右的意思，只需要记住j和k是下和上即可，进阶用法就是加上前缀数字，比如3j</li><li>gg&#x2F;G：移动到文档头（gg）和移动到文档尾（G），进阶用法就是行号+gg调到指定行【文档移动】</li><li>control+f&#x2F;b：翻页【页移动】</li><li>移动到这一行的首尾：行首0行尾$。值得注意的是，所谓行尾位置是不包括最后一个字符的，最后一个字符那个位置你永远移动不到【行移动】</li><li>w&#x2F;b：前后移动一个单词【行内移动】</li><li>f&#x2F;F+字母：光标移动到后文（使用f）或前文（使用F）中最近的第一个字母之前，进阶用法是这条命令执行之后，还能使用n或者N移动到第二个字母。这个f&#x2F;F命令其实也可以用更强大的&#x2F;和?平替【行内移动】</li></ol><p>进入插入模式：</p><ol><li>i&#x2F;a：i是光标本体位置，即在当前位置原地插入，即方块光标的左边缘位置。a则是在当前位置后一个字符插入，即方块光标的右边缘位置。初学者可能会记不住i和a的位置，其实也不用死记，不记得的时候可以联想一下a是ass（屁股）的意思【泄露了奇怪的记忆方法】</li><li>I&#x2F;A：I是在行首插入，A是在行尾插入</li><li>o&#x2F;O：o在下一行插入，O在上一行插入</li></ol><p>复制粘贴：</p><ol><li>yy：复制1行，进阶用法就是带数字，例如2yy复制2行【行复制】</li><li>可视模式：v+上文中的“定位光标”命令，可以对文本进行选中，然后按y复制，按d剪切【精确复制】</li><li>dd和dj：行剪切操作。其实dd就是剪切一行了，dj是剪切本行加上下一行，值得一提的是，不管是dd还是dj，都会把删除的东西放进剪切板【行剪切】</li><li>p：在方块光标的右边缘位置粘贴。记住如果是使用yy复制的行，粘贴的时候则会另起一行贴上去，这就是为什么有时候初学者会感到粘贴不好用，对按p之后粘贴的位置不清楚【粘贴】</li><li>ddp：交换当前行和下一行【行交换】</li><li>xp：交换当前字符和下一个字符【字符交换】</li></ol><p>删除：</p><ol><li>dd：删除一行。进阶用法就是加数字d3d删除三行，还有dj删除上一行dk删除下一行【删除行】</li><li>dw：删除一个单词。进阶用法就是加数字d3w删除三个单词，不过控制或者说数单词个数还需要研究一下什么叫单词【删除单词】</li><li>x：删除一个字符。进阶用法就是加数字3x删除三个字符【删除字】</li></ol><p>把命令重复多遍：数字+命令即可，通常用于插入多个同样的字符比如3 a!<code>&lt;esc&gt;</code></p><p>查找替换：</p><ol><li>替换：:％s&#x2F;abc&#x2F;def&#x2F;g把所有的 abc 替换为 def</li></ol><p>退出：</p><ol><li>快速保存并退出：ZZ</li><li>放弃更改重新打开本文件：:e!</li></ol><hr><h2 id="感谢阅读"><a href="#感谢阅读" class="headerlink" title="感谢阅读"></a>感谢阅读</h2><p>后续会抽空出一篇进阶命令，比如ctrl+v之类的。</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Vim&amp;NeoVim</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>你总说你黝黑</title>
-    <link href="/2023/04/06/%E8%AF%97/%E4%BD%A0%E6%80%BB%E8%AF%B4%E4%BD%A0%E9%BB%9D%E9%BB%91/"/>
-    <url>/2023/04/06/%E8%AF%97/%E4%BD%A0%E6%80%BB%E8%AF%B4%E4%BD%A0%E9%BB%9D%E9%BB%91/</url>
-    
-    <content type="html"><![CDATA[<h1 id="你总说你黝黑"><a href="#你总说你黝黑" class="headerlink" title="你总说你黝黑"></a>你总说你黝黑</h1><p>黝黑的皮肤总好过强行变白的脂粉</p><p>你等我跑近时回眸的笑容就在发光</p><p>我想世上应该至少有一半的美好是黝黑的呢</p><p>星空 大地和眼睛</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>诗</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>宝贝，来春天玩</title>
     <link href="/2023/04/06/%E8%AF%97/%E5%AE%9D%E8%B4%9D%EF%BC%8C%E6%9D%A5%E6%98%A5%E5%A4%A9%E7%8E%A9/"/>
     <url>/2023/04/06/%E8%AF%97/%E5%AE%9D%E8%B4%9D%EF%BC%8C%E6%9D%A5%E6%98%A5%E5%A4%A9%E7%8E%A9/</url>
@@ -128,6 +90,44 @@
     <categories>
       
       <category>诗</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>我不要活太久 五十九岁就可矣</title>
+    <link href="/2023/04/06/%E8%AF%97/%E6%88%91%E4%B8%8D%E8%A6%81%E6%B4%BB%E5%A4%AA%E4%B9%85%20%E4%BA%94%E5%8D%81%E4%B9%9D%E5%B2%81%E5%B0%B1%E5%8F%AF%E7%9F%A3/"/>
+    <url>/2023/04/06/%E8%AF%97/%E6%88%91%E4%B8%8D%E8%A6%81%E6%B4%BB%E5%A4%AA%E4%B9%85%20%E4%BA%94%E5%8D%81%E4%B9%9D%E5%B2%81%E5%B0%B1%E5%8F%AF%E7%9F%A3/</url>
+    
+    <content type="html"><![CDATA[<h1 id="我不要活太久-五十九岁就可矣"><a href="#我不要活太久-五十九岁就可矣" class="headerlink" title="我不要活太久 五十九岁就可矣"></a>我不要活太久 五十九岁就可矣</h1><p>我不要活太久 五十九岁就可矣</p><p>人老了真的很可怕</p><p>既要被小孩子教666的含义</p><p>还要被杨奉雪拖去爬泰山</p><br/><p>2020年11月28日</p><p>我不要活得太久</p><p>人老了真的很可怕</p><p>老人睡眠浅显短暂</p><p>假眠不能梦见杨奉雪</p><p>2020年12月07日</p><br/><p>我不要活太久</p><p>人老了真的很可怕</p><p>白发苍苍腿脚不敏</p><p>大千美好不能与妳一一游遍</p><p>2020年12月07日</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>诗</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>二分查找</title>
+    <link href="/2023/04/06/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
+    <url>/2023/04/06/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</url>
+    
+    <content type="html"><![CDATA[<h1 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a><strong>概述</strong></h2><hr><p><strong>二分算法解决问题的使用条件</strong></p><ol><li>有序：数据必须是有序的，不管是顺序表还是链，这不必多说</li><li>二段性：二分算法的判断条件必须具有二段性，通常是 “&gt;” 或 “&lt;”，人话说就是可以分为两部分，也可以说“查找的目标元素可以进行比较操作”</li></ol><blockquote><p><em>在算法题中，用二分算法解决问题的充分条件是什么？</em></p><ol><li>数据具有单调性：二分算法适用于有序数组或者单调性强的问题。在这种情况下，可以通过比较中间值和目标值的大小关系，排除一半的数据。</li><li>数据量较大：如果数据量较小，直接遍历整个数组即可。但如果数据量较大，二分算法可以节省大量时间复杂度，使算法效率更高。</li><li>没有重复元素：二分算法是基于元素唯一性的。如果存在重复元素，可能会出现一些问题，例如无法确定查找结果的唯一性。</li><li>可以随机访问元素：二分算法需要能够随机访问数组中的元素。如果数据结构不支持随机访问，例如链表，二分算法就无法使用。</li></ol></blockquote><hr><h2 id="模板代码"><a href="#模板代码" class="headerlink" title="模板代码"></a><strong>模板代码</strong></h2><p>题目：</p><blockquote><p><em>一道二分查找题</em></p><p>题干：满足 N ! 的末尾恰好有 K 个 0 的最小的 N 是多少?如果这样的 <em>N</em> 不存在输出 −1。</p><p>输入格式：一个整数K</p><p>输出格式：一个整数代表答案</p><p>样例输入：2</p><p>样例输出：10</p></blockquote><p>标准答案：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Scanner;<br><span class="hljs-comment">// 1:无需package</span><br><span class="hljs-comment">// 2: 类名必须Main, 不可修改</span><br> <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-comment">//求阶乘末尾0的个数其实就是求阶乘因子中5的个数</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-type">long</span> <span class="hljs-title function_">calc</span><span class="hljs-params">(<span class="hljs-type">long</span> x)</span> &#123;<br>        <span class="hljs-type">long</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span>(x!=<span class="hljs-number">0</span>) &#123;<br>            res=res+x/<span class="hljs-number">5</span>;<br>            x/=<span class="hljs-number">5</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">//二分查找</span><br>        Scanner scanner=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">long</span> k=scanner.nextLong();<br>        <span class="hljs-type">long</span> l=<span class="hljs-number">1</span>,r=Long.MAX_VALUE-<span class="hljs-number">5</span>;<span class="hljs-comment">//l为最左边，r为最右边</span><br>    <br>        <span class="hljs-keyword">while</span>(l&lt;r) &#123;<br>            <span class="hljs-type">long</span> mid=(l+r)/<span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span>(k&lt;=calc(mid)) &#123;<br>                r=mid;<br>            &#125;<span class="hljs-keyword">else</span> &#123;<br>                l=mid+<span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(calc(r)!=k) &#123;<br>            System.out.print(-<span class="hljs-number">1</span>);<br>        &#125;<span class="hljs-keyword">else</span> &#123;<br>            System.out.print(r);<br>        &#125;<br>    <br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>答案代码中，关于二分查找的分析：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//二分查找规定要求f(x)中的x是有序的</span><br><br><span class="hljs-comment">//规定一个最小值和最大值的指针，但要注意后续两者相加后是否会超过基本数据类型范围上限</span><br><span class="hljs-comment">//在此题中，l为最左边下标，r为最右边下标</span><br><span class="hljs-type">long</span> l=<span class="hljs-number">1</span>,r=Long.MAX_VALUE-<span class="hljs-number">5</span>;<br><br><span class="hljs-comment">//当左下标小于右下标时循环</span><br><span class="hljs-keyword">while</span>(l&lt;r) &#123;<br><span class="hljs-comment">//每次循环之前算出中下标</span><br><span class="hljs-type">long</span> mid=(l+r)/<span class="hljs-number">2</span>;<br><br><span class="hljs-comment">//如果中下标的值，在题目要求中偏小，把左下标的值更新为中下标</span><br><span class="hljs-keyword">if</span>(k&lt;=calc(mid)) &#123;<br>r=mid;<br>&#125;<span class="hljs-keyword">else</span> &#123; <span class="hljs-comment">//如果偏大，把右下标的值，更新为左下标</span><br>l=mid+<span class="hljs-number">1</span>;<br>&#125;<br>&#125;<br><br></code></pre></td></tr></table></figure><hr><h2 id="关于被查找的数组元素总数奇偶性的理解"><a href="#关于被查找的数组元素总数奇偶性的理解" class="headerlink" title="关于被查找的数组元素总数奇偶性的理解"></a><strong>关于被查找的数组元素总数奇偶性的理解</strong></h2><p>GPT关于被查找的数组元素个数奇偶性的理解是：</p><p>一句话就是，以上模板无论数组元素个数是奇是偶都适用，不过当元素个数为奇则最后只会剩下一个元素没有争议；元素个数为偶时最后剩下两个元素，两者都有可能是要找的目标</p><blockquote><p>这个二分查找算法是适用于所有元素个数为正整数的有序数组，无论数组元素个数是奇数还是偶数都可以使用这个模板。<br>对于奇数个元素的数组，最后剩下的中间元素就是要查找的元素；<br>对于偶数个元素的数组，则最后剩下的两个中间元素中任意一个都可能是要查找的元素。</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>算法</category>
       
     </categories>
     
@@ -156,11 +156,11 @@
   
   
   <entry>
-    <title>我不要活太久 五十九岁就可矣</title>
-    <link href="/2023/04/06/%E8%AF%97/%E6%88%91%E4%B8%8D%E8%A6%81%E6%B4%BB%E5%A4%AA%E4%B9%85%20%E4%BA%94%E5%8D%81%E4%B9%9D%E5%B2%81%E5%B0%B1%E5%8F%AF%E7%9F%A3/"/>
-    <url>/2023/04/06/%E8%AF%97/%E6%88%91%E4%B8%8D%E8%A6%81%E6%B4%BB%E5%A4%AA%E4%B9%85%20%E4%BA%94%E5%8D%81%E4%B9%9D%E5%B2%81%E5%B0%B1%E5%8F%AF%E7%9F%A3/</url>
+    <title>你总说你黝黑</title>
+    <link href="/2023/04/06/%E8%AF%97/%E4%BD%A0%E6%80%BB%E8%AF%B4%E4%BD%A0%E9%BB%9D%E9%BB%91/"/>
+    <url>/2023/04/06/%E8%AF%97/%E4%BD%A0%E6%80%BB%E8%AF%B4%E4%BD%A0%E9%BB%9D%E9%BB%91/</url>
     
-    <content type="html"><![CDATA[<h1 id="我不要活太久-五十九岁就可矣"><a href="#我不要活太久-五十九岁就可矣" class="headerlink" title="我不要活太久 五十九岁就可矣"></a>我不要活太久 五十九岁就可矣</h1><p>我不要活太久 五十九岁就可矣</p><p>人老了真的很可怕</p><p>既要被小孩子教666的含义</p><p>还要被杨奉雪拖去爬泰山</p><br/><p>2020年11月28日</p><p>我不要活得太久</p><p>人老了真的很可怕</p><p>老人睡眠浅显短暂</p><p>假眠不能梦见杨奉雪</p><p>2020年12月07日</p><br/><p>我不要活太久</p><p>人老了真的很可怕</p><p>白发苍苍腿脚不敏</p><p>大千美好不能与妳一一游遍</p><p>2020年12月07日</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="你总说你黝黑"><a href="#你总说你黝黑" class="headerlink" title="你总说你黝黑"></a>你总说你黝黑</h1><p>黝黑的皮肤总好过强行变白的脂粉</p><p>你等我跑近时回眸的笑容就在发光</p><p>我想世上应该至少有一半的美好是黝黑的呢</p><p>星空 大地和眼睛</p>]]></content>
     
     
     <categories>
@@ -232,44 +232,6 @@
   
   
   <entry>
-    <title>秋水</title>
-    <link href="/2023/04/06/%E8%AF%97/%E7%A7%8B%E6%B0%B4/"/>
-    <url>/2023/04/06/%E8%AF%97/%E7%A7%8B%E6%B0%B4/</url>
-    
-    <content type="html"><![CDATA[<h1 id="秋水"><a href="#秋水" class="headerlink" title="秋水"></a>秋水</h1><p>秋水是一种纯洁的颜料，涂抹你的心里，洁白</p><p>我站在小雨的九月，不会祈求命运赐予任何</p><p>抓住一颗星星，我要送给我爱的人</p><p>搏得一朵鲜花，你是一种无言的芬芳</p><p>磨碎星星和花，和我的喜悦的心情</p><p>带去沉默的信，和一满瓶纯洁的秋水</p><p>愿爱人喜欢这一切，绘制在青空的蓝色纸张</p><p>而我也会握你的手，轻轻呼唤</p><p>一起洗礼吧，在雨中，爱人</p><p>你愿意吗</p><p>2020.9.16</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>诗</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>站在阳光里</title>
-    <link href="/2023/04/06/%E8%AF%97/%E7%AB%99%E5%9C%A8%E9%98%B3%E5%85%89%E9%87%8C/"/>
-    <url>/2023/04/06/%E8%AF%97/%E7%AB%99%E5%9C%A8%E9%98%B3%E5%85%89%E9%87%8C/</url>
-    
-    <content type="html"><![CDATA[<h1 id="站在阳光里"><a href="#站在阳光里" class="headerlink" title="站在阳光里"></a>站在阳光里</h1><p>站在阳光里</p><p>我会不会 过度思念你的缘故</p><p>消融在这暖暖阳光</p><p>呆看飞絮红尘</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>诗</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>路过科师大很多地方</title>
     <link href="/2023/04/06/%E8%AF%97/%E8%B7%AF%E8%BF%87%E7%A7%91%E5%B8%88%E5%A4%A7%E5%BE%88%E5%A4%9A%E5%9C%B0%E6%96%B9/"/>
     <url>/2023/04/06/%E8%AF%97/%E8%B7%AF%E8%BF%87%E7%A7%91%E5%B8%88%E5%A4%A7%E5%BE%88%E5%A4%9A%E5%9C%B0%E6%96%B9/</url>
@@ -289,11 +251,11 @@
   
   
   <entry>
-    <title>野人</title>
-    <link href="/2023/04/06/%E8%AF%97/%E9%87%8E%E4%BA%BA/"/>
-    <url>/2023/04/06/%E8%AF%97/%E9%87%8E%E4%BA%BA/</url>
+    <title>站在阳光里</title>
+    <link href="/2023/04/06/%E8%AF%97/%E7%AB%99%E5%9C%A8%E9%98%B3%E5%85%89%E9%87%8C/"/>
+    <url>/2023/04/06/%E8%AF%97/%E7%AB%99%E5%9C%A8%E9%98%B3%E5%85%89%E9%87%8C/</url>
     
-    <content type="html"><![CDATA[<h1 id="野人"><a href="#野人" class="headerlink" title="野人"></a>野人</h1><p>掸去身上尘埃</p><p>回到潮湿的温暖洞穴</p><p>野人每个毛孔都舒张开来</p><p>感受到了自己存在</p><br/><p>身上的伤口还略微作痛</p><p>但我们不能用爱情来疗伤</p><p>好在尚且不算饥饿</p><p>今天狩猎的收获寥寥</p><p>2021.5.17</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="站在阳光里"><a href="#站在阳光里" class="headerlink" title="站在阳光里"></a>站在阳光里</h1><p>站在阳光里</p><p>我会不会 过度思念你的缘故</p><p>消融在这暖暖阳光</p><p>呆看飞絮红尘</p>]]></content>
     
     
     <categories>
@@ -337,6 +299,63 @@
     <categories>
       
       <category>英语每日一文</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>野人</title>
+    <link href="/2023/04/06/%E8%AF%97/%E9%87%8E%E4%BA%BA/"/>
+    <url>/2023/04/06/%E8%AF%97/%E9%87%8E%E4%BA%BA/</url>
+    
+    <content type="html"><![CDATA[<h1 id="野人"><a href="#野人" class="headerlink" title="野人"></a>野人</h1><p>掸去身上尘埃</p><p>回到潮湿的温暖洞穴</p><p>野人每个毛孔都舒张开来</p><p>感受到了自己存在</p><br/><p>身上的伤口还略微作痛</p><p>但我们不能用爱情来疗伤</p><p>好在尚且不算饥饿</p><p>今天狩猎的收获寥寥</p><p>2021.5.17</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>诗</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Vim极简命令手册</title>
+    <link href="/2023/04/06/Vim&amp;&amp;Neovim/Vim%E6%9E%81%E7%AE%80%E5%91%BD%E4%BB%A4%E6%89%8B%E5%86%8C/"/>
+    <url>/2023/04/06/Vim&amp;&amp;Neovim/Vim%E6%9E%81%E7%AE%80%E5%91%BD%E4%BB%A4%E6%89%8B%E5%86%8C/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Vim极简命令手册"><a href="#Vim极简命令手册" class="headerlink" title="Vim极简命令手册"></a>Vim极简命令手册</h1><h2 id="前言和概述"><a href="#前言和概述" class="headerlink" title="前言和概述"></a>前言和概述</h2><p>作为一个大学生，在vim学习中感到初学者平常学一两个命令是没用的，vim的入门第一步必须快速掌握一批能够足够日常编辑文本使用的命令，如增删改查、跳转光标……这样才能够让vim在工作学习中成功发动，进而在使用中熟能生巧、拓展学习其他的快捷键。</p><p>以下都是在正常模式下的命令，即按下Esc所进入的模式，这个模式是Vim的精要，掌握了这些移动光标、切换插入模式、复制粘贴、增改删查、退出，基本能入门使用Vim。</p><hr><h2 id="正常模式"><a href="#正常模式" class="headerlink" title="正常模式"></a>正常模式</h2><p>定位光标：</p><ol><li>逐个字符移动：hjkl，左下上右，不用去死记，有个简单的记忆方法，这四个字母恰好是键盘上的同一排，这排字母中最左边的h和最右边的h和l恰好对应是左右的意思，只需要记住j和k是下和上即可，进阶用法就是加上前缀数字，比如3j</li><li>gg&#x2F;G：移动到文档头（gg）和移动到文档尾（G），进阶用法就是行号+gg调到指定行【文档移动】</li><li>control+f&#x2F;b：翻页【页移动】</li><li>移动到这一行的首尾：行首0行尾$。值得注意的是，所谓行尾位置是不包括最后一个字符的，最后一个字符那个位置你永远移动不到【行移动】</li><li>w&#x2F;b：前后移动一个单词【行内移动】</li><li>f&#x2F;F+字母：光标移动到后文（使用f）或前文（使用F）中最近的第一个字母之前，进阶用法是这条命令执行之后，还能使用n或者N移动到第二个字母。这个f&#x2F;F命令其实也可以用更强大的&#x2F;和?平替【行内移动】</li></ol><p>进入插入模式：</p><ol><li>i&#x2F;a：i是光标本体位置，即在当前位置原地插入，即方块光标的左边缘位置。a则是在当前位置后一个字符插入，即方块光标的右边缘位置。初学者可能会记不住i和a的位置，其实也不用死记，不记得的时候可以联想一下a是ass（屁股）的意思【泄露了奇怪的记忆方法】</li><li>I&#x2F;A：I是在行首插入，A是在行尾插入</li><li>o&#x2F;O：o在下一行插入，O在上一行插入</li></ol><p>复制粘贴：</p><ol><li>yy：复制1行，进阶用法就是带数字，例如2yy复制2行【行复制】</li><li>可视模式：v+上文中的“定位光标”命令，可以对文本进行选中，然后按y复制，按d剪切【精确复制】</li><li>dd和dj：行剪切操作。其实dd就是剪切一行了，dj是剪切本行加上下一行，值得一提的是，不管是dd还是dj，都会把删除的东西放进剪切板【行剪切】</li><li>p：在方块光标的右边缘位置粘贴。记住如果是使用yy复制的行，粘贴的时候则会另起一行贴上去，这就是为什么有时候初学者会感到粘贴不好用，对按p之后粘贴的位置不清楚【粘贴】</li><li>ddp：交换当前行和下一行【行交换】</li><li>xp：交换当前字符和下一个字符【字符交换】</li></ol><p>删除：</p><ol><li>dd：删除一行。进阶用法就是加数字d3d删除三行，还有dj删除上一行dk删除下一行【删除行】</li><li>dw：删除一个单词。进阶用法就是加数字d3w删除三个单词，不过控制或者说数单词个数还需要研究一下什么叫单词【删除单词】</li><li>x：删除一个字符。进阶用法就是加数字3x删除三个字符【删除字】</li></ol><p>把命令重复多遍：数字+命令即可，通常用于插入多个同样的字符比如3 a!<code>&lt;esc&gt;</code></p><p>查找替换：</p><ol><li>替换：:％s&#x2F;abc&#x2F;def&#x2F;g把所有的 abc 替换为 def</li></ol><p>退出：</p><ol><li>快速保存并退出：ZZ</li><li>放弃更改重新打开本文件：:e!</li></ol><hr><h2 id="感谢阅读"><a href="#感谢阅读" class="headerlink" title="感谢阅读"></a>感谢阅读</h2><p>后续会抽空出一篇进阶命令，比如ctrl+v之类的。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Vim&amp;NeoVim</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>秋水</title>
+    <link href="/2023/04/06/%E8%AF%97/%E7%A7%8B%E6%B0%B4/"/>
+    <url>/2023/04/06/%E8%AF%97/%E7%A7%8B%E6%B0%B4/</url>
+    
+    <content type="html"><![CDATA[<h1 id="秋水"><a href="#秋水" class="headerlink" title="秋水"></a>秋水</h1><p>秋水是一种纯洁的颜料，涂抹你的心里，洁白</p><p>我站在小雨的九月，不会祈求命运赐予任何</p><p>抓住一颗星星，我要送给我爱的人</p><p>搏得一朵鲜花，你是一种无言的芬芳</p><p>磨碎星星和花，和我的喜悦的心情</p><p>带去沉默的信，和一满瓶纯洁的秋水</p><p>愿爱人喜欢这一切，绘制在青空的蓝色纸张</p><p>而我也会握你的手，轻轻呼唤</p><p>一起洗礼吧，在雨中，爱人</p><p>你愿意吗</p><p>2020.9.16</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>诗</category>
       
     </categories>
     
