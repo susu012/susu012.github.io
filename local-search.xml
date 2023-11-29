@@ -8,7 +8,7 @@
     <link href="/2023/11/30/%E9%9A%8F%E8%AE%B0/%E5%9B%B0%E6%83%91/"/>
     <url>/2023/11/30/%E9%9A%8F%E8%AE%B0/%E5%9B%B0%E6%83%91/</url>
     
-    <content type="html"><![CDATA[<p>今天的我比以前更好了吗？在这个前夜，外面寒风猎猎，我又扪心自问。</p><p>似乎沉默才是唯一的话语。</p><p>明天就是大学的最后一天了，要毕业了，我深感无路可退。似乎高考的失败还在眼前，似乎从很久以前开始，我的人生就在一种止不住的下坠之中，在此期间无论我掀起怎样的波涛，最终结果都是不尽如人意，哦，八年了，我的理想，还要多久才能实现，它是一个不可及的理想吗？</p><p>我在扎紧我的裤脚，我像西伯利亚越狱的囚犯，我为最终的冲刺在准备，我已经准备一年了，看来今年的风雪不适合出逃。但是，我已经有了最深刻的耐心，沉默，我还在沉默中蛰伏。</p><p>我是不会迷茫的。2023年，无论如何，都是路途以来收获最大的一年，我没有理由悲怆。我从未忘记来时的初心——</p><p>远方！它就在那里！</p><p>2023年11月30日</p>]]></content>
+    <content type="html"><![CDATA[<p>今天的我比以前更好了吗？在这个前夜，外面寒风猎猎，我又扪心自问。</p><p>似乎沉默才是唯一的话语。</p><p>明天就是大学的最后一天了，要毕业了，我深感无路可退。似乎高考的失败还在眼前，似乎从很久以前开始，我的人生就在一种止不住的下坠之中，在此期间无论我掀起怎样的波涛，最终结果都是不尽如人意，哦，八年了，我的理想，还要多久才能实现，它是一个不可及的理想吗？</p><p>我在扎紧我的裤脚，我像西伯利亚越狱的囚犯，我为最终的冲刺在准备，我已经准备一年了，看来今年的风雪不适合出逃。但是，我已经有了最深刻的耐心，沉默，我还在沉默中蛰伏。</p><p>我是不会迷茫的。2023年，无论如何，都是路途以来收获最大的一年，我没有理由悲怆。我从未忘记来时的初心——</p><p>远方！它就在那里！心中有柄剑！请你不必哭泣！</p><p>2023年11月30日</p>]]></content>
     
     
     <categories>
@@ -99,25 +99,6 @@
   
   
   <entry>
-    <title>二分查找</title>
-    <link href="/2023/04/06/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
-    <url>/2023/04/06/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</url>
-    
-    <content type="html"><![CDATA[<h1 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a><strong>概述</strong></h2><hr><p><strong>二分算法解决问题的使用条件</strong></p><ol><li>有序：数据必须是有序的，不管是顺序表还是链，这不必多说</li><li>二段性：二分算法的判断条件必须具有二段性，通常是 “&gt;” 或 “&lt;”，人话说就是可以分为两部分，也可以说“查找的目标元素可以进行比较操作”</li></ol><blockquote><p><em>在算法题中，用二分算法解决问题的充分条件是什么？</em></p><ol><li>数据具有单调性：二分算法适用于有序数组或者单调性强的问题。在这种情况下，可以通过比较中间值和目标值的大小关系，排除一半的数据。</li><li>数据量较大：如果数据量较小，直接遍历整个数组即可。但如果数据量较大，二分算法可以节省大量时间复杂度，使算法效率更高。</li><li>没有重复元素：二分算法是基于元素唯一性的。如果存在重复元素，可能会出现一些问题，例如无法确定查找结果的唯一性。</li><li>可以随机访问元素：二分算法需要能够随机访问数组中的元素。如果数据结构不支持随机访问，例如链表，二分算法就无法使用。</li></ol></blockquote><hr><h2 id="模板代码"><a href="#模板代码" class="headerlink" title="模板代码"></a><strong>模板代码</strong></h2><p>题目：</p><blockquote><p><em>一道二分查找题</em></p><p>题干：满足 N ! 的末尾恰好有 K 个 0 的最小的 N 是多少?如果这样的 <em>N</em> 不存在输出 −1。</p><p>输入格式：一个整数K</p><p>输出格式：一个整数代表答案</p><p>样例输入：2</p><p>样例输出：10</p></blockquote><p>标准答案：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Scanner;<br><span class="hljs-comment">// 1:无需package</span><br><span class="hljs-comment">// 2: 类名必须Main, 不可修改</span><br> <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-comment">//求阶乘末尾0的个数其实就是求阶乘因子中5的个数</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-type">long</span> <span class="hljs-title function_">calc</span><span class="hljs-params">(<span class="hljs-type">long</span> x)</span> &#123;<br>        <span class="hljs-type">long</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span>(x!=<span class="hljs-number">0</span>) &#123;<br>            res=res+x/<span class="hljs-number">5</span>;<br>            x/=<span class="hljs-number">5</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">//二分查找</span><br>        Scanner scanner=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">long</span> k=scanner.nextLong();<br>        <span class="hljs-type">long</span> l=<span class="hljs-number">1</span>,r=Long.MAX_VALUE-<span class="hljs-number">5</span>;<span class="hljs-comment">//l为最左边，r为最右边</span><br>    <br>        <span class="hljs-keyword">while</span>(l&lt;r) &#123;<br>            <span class="hljs-type">long</span> mid=(l+r)/<span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span>(k&lt;=calc(mid)) &#123;<br>                r=mid;<br>            &#125;<span class="hljs-keyword">else</span> &#123;<br>                l=mid+<span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(calc(r)!=k) &#123;<br>            System.out.print(-<span class="hljs-number">1</span>);<br>        &#125;<span class="hljs-keyword">else</span> &#123;<br>            System.out.print(r);<br>        &#125;<br>    <br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>答案代码中，关于二分查找的分析：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//二分查找规定要求f(x)中的x是有序的</span><br><br><span class="hljs-comment">//规定一个最小值和最大值的指针，但要注意后续两者相加后是否会超过基本数据类型范围上限</span><br><span class="hljs-comment">//在此题中，l为最左边下标，r为最右边下标</span><br><span class="hljs-type">long</span> l=<span class="hljs-number">1</span>,r=Long.MAX_VALUE-<span class="hljs-number">5</span>;<br><br><span class="hljs-comment">//当左下标小于右下标时循环</span><br><span class="hljs-keyword">while</span>(l&lt;r) &#123;<br><span class="hljs-comment">//每次循环之前算出中下标</span><br><span class="hljs-type">long</span> mid=(l+r)/<span class="hljs-number">2</span>;<br><br><span class="hljs-comment">//如果中下标的值，在题目要求中偏小，把左下标的值更新为中下标</span><br><span class="hljs-keyword">if</span>(k&lt;=calc(mid)) &#123;<br>r=mid;<br>&#125;<span class="hljs-keyword">else</span> &#123; <span class="hljs-comment">//如果偏大，把右下标的值，更新为左下标</span><br>l=mid+<span class="hljs-number">1</span>;<br>&#125;<br>&#125;<br><br></code></pre></td></tr></table></figure><hr><h2 id="关于被查找的数组元素总数奇偶性的理解"><a href="#关于被查找的数组元素总数奇偶性的理解" class="headerlink" title="关于被查找的数组元素总数奇偶性的理解"></a><strong>关于被查找的数组元素总数奇偶性的理解</strong></h2><p>GPT关于被查找的数组元素个数奇偶性的理解是：</p><p>一句话就是，以上模板无论数组元素个数是奇是偶都适用，不过当元素个数为奇则最后只会剩下一个元素没有争议；元素个数为偶时最后剩下两个元素，两者都有可能是要找的目标</p><blockquote><p>这个二分查找算法是适用于所有元素个数为正整数的有序数组，无论数组元素个数是奇数还是偶数都可以使用这个模板。<br>对于奇数个元素的数组，最后剩下的中间元素就是要查找的元素；<br>对于偶数个元素的数组，则最后剩下的两个中间元素中任意一个都可能是要查找的元素。</p></blockquote>]]></content>
-    
-    
-    <categories>
-      
-      <category>算法</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>一道题理解动态规划、BFS、DFS</title>
     <link href="/2023/04/06/%E7%AE%97%E6%B3%95/%E4%B8%80%E9%81%93%E9%A2%98%E7%90%86%E8%A7%A3%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E3%80%81BFS%E3%80%81DFS/"/>
     <url>/2023/04/06/%E7%AE%97%E6%B3%95/%E4%B8%80%E9%81%93%E9%A2%98%E7%90%86%E8%A7%A3%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E3%80%81BFS%E3%80%81DFS/</url>
@@ -137,16 +118,16 @@
   
   
   <entry>
-    <title>你总说你黝黑</title>
-    <link href="/2023/04/06/%E8%AF%97/%E4%BD%A0%E6%80%BB%E8%AF%B4%E4%BD%A0%E9%BB%9D%E9%BB%91/"/>
-    <url>/2023/04/06/%E8%AF%97/%E4%BD%A0%E6%80%BB%E8%AF%B4%E4%BD%A0%E9%BB%9D%E9%BB%91/</url>
+    <title>二分查找</title>
+    <link href="/2023/04/06/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
+    <url>/2023/04/06/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</url>
     
-    <content type="html"><![CDATA[<h1 id="你总说你黝黑"><a href="#你总说你黝黑" class="headerlink" title="你总说你黝黑"></a>你总说你黝黑</h1><p>黝黑的皮肤总好过强行变白的脂粉</p><p>你等我跑近时回眸的笑容就在发光</p><p>我想世上应该至少有一半的美好是黝黑的呢</p><p>星空 大地和眼睛</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a><strong>概述</strong></h2><hr><p><strong>二分算法解决问题的使用条件</strong></p><ol><li>有序：数据必须是有序的，不管是顺序表还是链，这不必多说</li><li>二段性：二分算法的判断条件必须具有二段性，通常是 “&gt;” 或 “&lt;”，人话说就是可以分为两部分，也可以说“查找的目标元素可以进行比较操作”</li></ol><blockquote><p><em>在算法题中，用二分算法解决问题的充分条件是什么？</em></p><ol><li>数据具有单调性：二分算法适用于有序数组或者单调性强的问题。在这种情况下，可以通过比较中间值和目标值的大小关系，排除一半的数据。</li><li>数据量较大：如果数据量较小，直接遍历整个数组即可。但如果数据量较大，二分算法可以节省大量时间复杂度，使算法效率更高。</li><li>没有重复元素：二分算法是基于元素唯一性的。如果存在重复元素，可能会出现一些问题，例如无法确定查找结果的唯一性。</li><li>可以随机访问元素：二分算法需要能够随机访问数组中的元素。如果数据结构不支持随机访问，例如链表，二分算法就无法使用。</li></ol></blockquote><hr><h2 id="模板代码"><a href="#模板代码" class="headerlink" title="模板代码"></a><strong>模板代码</strong></h2><p>题目：</p><blockquote><p><em>一道二分查找题</em></p><p>题干：满足 N ! 的末尾恰好有 K 个 0 的最小的 N 是多少?如果这样的 <em>N</em> 不存在输出 −1。</p><p>输入格式：一个整数K</p><p>输出格式：一个整数代表答案</p><p>样例输入：2</p><p>样例输出：10</p></blockquote><p>标准答案：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Scanner;<br><span class="hljs-comment">// 1:无需package</span><br><span class="hljs-comment">// 2: 类名必须Main, 不可修改</span><br> <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-comment">//求阶乘末尾0的个数其实就是求阶乘因子中5的个数</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-type">long</span> <span class="hljs-title function_">calc</span><span class="hljs-params">(<span class="hljs-type">long</span> x)</span> &#123;<br>        <span class="hljs-type">long</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span>(x!=<span class="hljs-number">0</span>) &#123;<br>            res=res+x/<span class="hljs-number">5</span>;<br>            x/=<span class="hljs-number">5</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">//二分查找</span><br>        Scanner scanner=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">long</span> k=scanner.nextLong();<br>        <span class="hljs-type">long</span> l=<span class="hljs-number">1</span>,r=Long.MAX_VALUE-<span class="hljs-number">5</span>;<span class="hljs-comment">//l为最左边，r为最右边</span><br>    <br>        <span class="hljs-keyword">while</span>(l&lt;r) &#123;<br>            <span class="hljs-type">long</span> mid=(l+r)/<span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span>(k&lt;=calc(mid)) &#123;<br>                r=mid;<br>            &#125;<span class="hljs-keyword">else</span> &#123;<br>                l=mid+<span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(calc(r)!=k) &#123;<br>            System.out.print(-<span class="hljs-number">1</span>);<br>        &#125;<span class="hljs-keyword">else</span> &#123;<br>            System.out.print(r);<br>        &#125;<br>    <br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>答案代码中，关于二分查找的分析：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//二分查找规定要求f(x)中的x是有序的</span><br><br><span class="hljs-comment">//规定一个最小值和最大值的指针，但要注意后续两者相加后是否会超过基本数据类型范围上限</span><br><span class="hljs-comment">//在此题中，l为最左边下标，r为最右边下标</span><br><span class="hljs-type">long</span> l=<span class="hljs-number">1</span>,r=Long.MAX_VALUE-<span class="hljs-number">5</span>;<br><br><span class="hljs-comment">//当左下标小于右下标时循环</span><br><span class="hljs-keyword">while</span>(l&lt;r) &#123;<br><span class="hljs-comment">//每次循环之前算出中下标</span><br><span class="hljs-type">long</span> mid=(l+r)/<span class="hljs-number">2</span>;<br><br><span class="hljs-comment">//如果中下标的值，在题目要求中偏小，把左下标的值更新为中下标</span><br><span class="hljs-keyword">if</span>(k&lt;=calc(mid)) &#123;<br>r=mid;<br>&#125;<span class="hljs-keyword">else</span> &#123; <span class="hljs-comment">//如果偏大，把右下标的值，更新为左下标</span><br>l=mid+<span class="hljs-number">1</span>;<br>&#125;<br>&#125;<br><br></code></pre></td></tr></table></figure><hr><h2 id="关于被查找的数组元素总数奇偶性的理解"><a href="#关于被查找的数组元素总数奇偶性的理解" class="headerlink" title="关于被查找的数组元素总数奇偶性的理解"></a><strong>关于被查找的数组元素总数奇偶性的理解</strong></h2><p>GPT关于被查找的数组元素个数奇偶性的理解是：</p><p>一句话就是，以上模板无论数组元素个数是奇是偶都适用，不过当元素个数为奇则最后只会剩下一个元素没有争议；元素个数为偶时最后剩下两个元素，两者都有可能是要找的目标</p><blockquote><p>这个二分查找算法是适用于所有元素个数为正整数的有序数组，无论数组元素个数是奇数还是偶数都可以使用这个模板。<br>对于奇数个元素的数组，最后剩下的中间元素就是要查找的元素；<br>对于偶数个元素的数组，则最后剩下的两个中间元素中任意一个都可能是要查找的元素。</p></blockquote>]]></content>
     
     
     <categories>
       
-      <category>诗</category>
+      <category>算法</category>
       
     </categories>
     
@@ -166,6 +147,25 @@
     <categories>
       
       <category>Vim&amp;NeoVim</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>你总说你黝黑</title>
+    <link href="/2023/04/06/%E8%AF%97/%E4%BD%A0%E6%80%BB%E8%AF%B4%E4%BD%A0%E9%BB%9D%E9%BB%91/"/>
+    <url>/2023/04/06/%E8%AF%97/%E4%BD%A0%E6%80%BB%E8%AF%B4%E4%BD%A0%E9%BB%9D%E9%BB%91/</url>
+    
+    <content type="html"><![CDATA[<h1 id="你总说你黝黑"><a href="#你总说你黝黑" class="headerlink" title="你总说你黝黑"></a>你总说你黝黑</h1><p>黝黑的皮肤总好过强行变白的脂粉</p><p>你等我跑近时回眸的笑容就在发光</p><p>我想世上应该至少有一半的美好是黝黑的呢</p><p>星空 大地和眼睛</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>诗</category>
       
     </categories>
     
@@ -232,11 +232,11 @@
   
   
   <entry>
-    <title>我心中有</title>
-    <link href="/2023/04/06/%E8%AF%97/%E6%88%91%E5%BF%83%E4%B8%AD%E6%9C%89/"/>
-    <url>/2023/04/06/%E8%AF%97/%E6%88%91%E5%BF%83%E4%B8%AD%E6%9C%89/</url>
+    <title>我不要活太久 五十九岁就可矣</title>
+    <link href="/2023/04/06/%E8%AF%97/%E6%88%91%E4%B8%8D%E8%A6%81%E6%B4%BB%E5%A4%AA%E4%B9%85%20%E4%BA%94%E5%8D%81%E4%B9%9D%E5%B2%81%E5%B0%B1%E5%8F%AF%E7%9F%A3/"/>
+    <url>/2023/04/06/%E8%AF%97/%E6%88%91%E4%B8%8D%E8%A6%81%E6%B4%BB%E5%A4%AA%E4%B9%85%20%E4%BA%94%E5%8D%81%E4%B9%9D%E5%B2%81%E5%B0%B1%E5%8F%AF%E7%9F%A3/</url>
     
-    <content type="html"><![CDATA[<h1 id="我心中有"><a href="#我心中有" class="headerlink" title="我心中有"></a>我心中有</h1><p>我心中有很多奇妙幻想和飞扬的点子</p><p>在最深沉最黑暗的夜里才会开花</p><p>当我意识到我是人的时候</p><p>喜悦溢满流出我的胸膛</p><br/><p>纵然我是颗尘埃无人注意</p><p>但总算和你们有了奇妙分别</p><p>如果你能牵着我思绪的一边线头</p><p>就能和我一起傲游到宇宙尽头</p><br/><p>我的幸福分享给你</p><p>一半 便可填满整个宇宙</p><p>2021年05月16日</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="我不要活太久-五十九岁就可矣"><a href="#我不要活太久-五十九岁就可矣" class="headerlink" title="我不要活太久 五十九岁就可矣"></a>我不要活太久 五十九岁就可矣</h1><p>我不要活太久 五十九岁就可矣</p><p>人老了真的很可怕</p><p>既要被小孩子教666的含义</p><p>还要被杨奉雪拖去爬泰山</p><br/><p>2020年11月28日</p><p>我不要活得太久</p><p>人老了真的很可怕</p><p>老人睡眠浅显短暂</p><p>假眠不能梦见杨奉雪</p><p>2020年12月07日</p><br/><p>我不要活太久</p><p>人老了真的很可怕</p><p>白发苍苍腿脚不敏</p><p>大千美好不能与妳一一游遍</p><p>2020年12月07日</p>]]></content>
     
     
     <categories>
@@ -251,11 +251,11 @@
   
   
   <entry>
-    <title>我不要活太久 五十九岁就可矣</title>
-    <link href="/2023/04/06/%E8%AF%97/%E6%88%91%E4%B8%8D%E8%A6%81%E6%B4%BB%E5%A4%AA%E4%B9%85%20%E4%BA%94%E5%8D%81%E4%B9%9D%E5%B2%81%E5%B0%B1%E5%8F%AF%E7%9F%A3/"/>
-    <url>/2023/04/06/%E8%AF%97/%E6%88%91%E4%B8%8D%E8%A6%81%E6%B4%BB%E5%A4%AA%E4%B9%85%20%E4%BA%94%E5%8D%81%E4%B9%9D%E5%B2%81%E5%B0%B1%E5%8F%AF%E7%9F%A3/</url>
+    <title>我心中有</title>
+    <link href="/2023/04/06/%E8%AF%97/%E6%88%91%E5%BF%83%E4%B8%AD%E6%9C%89/"/>
+    <url>/2023/04/06/%E8%AF%97/%E6%88%91%E5%BF%83%E4%B8%AD%E6%9C%89/</url>
     
-    <content type="html"><![CDATA[<h1 id="我不要活太久-五十九岁就可矣"><a href="#我不要活太久-五十九岁就可矣" class="headerlink" title="我不要活太久 五十九岁就可矣"></a>我不要活太久 五十九岁就可矣</h1><p>我不要活太久 五十九岁就可矣</p><p>人老了真的很可怕</p><p>既要被小孩子教666的含义</p><p>还要被杨奉雪拖去爬泰山</p><br/><p>2020年11月28日</p><p>我不要活得太久</p><p>人老了真的很可怕</p><p>老人睡眠浅显短暂</p><p>假眠不能梦见杨奉雪</p><p>2020年12月07日</p><br/><p>我不要活太久</p><p>人老了真的很可怕</p><p>白发苍苍腿脚不敏</p><p>大千美好不能与妳一一游遍</p><p>2020年12月07日</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="我心中有"><a href="#我心中有" class="headerlink" title="我心中有"></a>我心中有</h1><p>我心中有很多奇妙幻想和飞扬的点子</p><p>在最深沉最黑暗的夜里才会开花</p><p>当我意识到我是人的时候</p><p>喜悦溢满流出我的胸膛</p><br/><p>纵然我是颗尘埃无人注意</p><p>但总算和你们有了奇妙分别</p><p>如果你能牵着我思绪的一边线头</p><p>就能和我一起傲游到宇宙尽头</p><br/><p>我的幸福分享给你</p><p>一半 便可填满整个宇宙</p><p>2021年05月16日</p>]]></content>
     
     
     <categories>
@@ -289,11 +289,11 @@
   
   
   <entry>
-    <title>站在阳光里</title>
-    <link href="/2023/04/06/%E8%AF%97/%E7%AB%99%E5%9C%A8%E9%98%B3%E5%85%89%E9%87%8C/"/>
-    <url>/2023/04/06/%E8%AF%97/%E7%AB%99%E5%9C%A8%E9%98%B3%E5%85%89%E9%87%8C/</url>
+    <title>理想</title>
+    <link href="/2023/04/06/%E8%AF%97/%E7%90%86%E6%83%B3/"/>
+    <url>/2023/04/06/%E8%AF%97/%E7%90%86%E6%83%B3/</url>
     
-    <content type="html"><![CDATA[<h1 id="站在阳光里"><a href="#站在阳光里" class="headerlink" title="站在阳光里"></a>站在阳光里</h1><p>站在阳光里</p><p>我会不会 过度思念你的缘故</p><p>消融在这暖暖阳光</p><p>呆看飞絮红尘</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="理想"><a href="#理想" class="headerlink" title="理想"></a>理想</h1><p>我愿意欺骗自己</p><p>阳光是暖的 空气是香的</p><p>烦恼是一只揉皱的纸飞机</p><p>让我们把它用力 扔掉</p><br/><p>在真实之海定锚</p><p>我是一只志于虚幻的独木舟</p><p>海水也不会施舍半分真实的怜悯</p><p>我只信 我的眼泪 比真实更真实</p><br/><p>我为眼泪而活 我的树根</p><p>闭眼就能看见 金色的岛屿</p><p>2019.8.28</p>]]></content>
     
     
     <categories>
@@ -327,11 +327,11 @@
   
   
   <entry>
-    <title>镜子</title>
-    <link href="/2023/04/06/%E8%AF%97/%E9%95%9C%E5%AD%90/"/>
-    <url>/2023/04/06/%E8%AF%97/%E9%95%9C%E5%AD%90/</url>
+    <title>站在阳光里</title>
+    <link href="/2023/04/06/%E8%AF%97/%E7%AB%99%E5%9C%A8%E9%98%B3%E5%85%89%E9%87%8C/"/>
+    <url>/2023/04/06/%E8%AF%97/%E7%AB%99%E5%9C%A8%E9%98%B3%E5%85%89%E9%87%8C/</url>
     
-    <content type="html"><![CDATA[<h1 id="镜子"><a href="#镜子" class="headerlink" title="镜子"></a>镜子</h1><p>世界上的一切都是镜子</p><p>物质的映出现实的自己</p><p>虚幻的映出理想的自己</p><p>远方是天而脚下的是地</p><br/><p>我是一只徜徉在镜的鱼</p><p>梦想是此生只照哈哈镜</p><p>世界很大前途悠远无尽</p><p>漫看云朵卷舒怡然自乐</p><p>2021年05月13日</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="站在阳光里"><a href="#站在阳光里" class="headerlink" title="站在阳光里"></a>站在阳光里</h1><p>站在阳光里</p><p>我会不会 过度思念你的缘故</p><p>消融在这暖暖阳光</p><p>呆看飞絮红尘</p>]]></content>
     
     
     <categories>
@@ -365,11 +365,11 @@
   
   
   <entry>
-    <title>理想</title>
-    <link href="/2023/04/06/%E8%AF%97/%E7%90%86%E6%83%B3/"/>
-    <url>/2023/04/06/%E8%AF%97/%E7%90%86%E6%83%B3/</url>
+    <title>镜子</title>
+    <link href="/2023/04/06/%E8%AF%97/%E9%95%9C%E5%AD%90/"/>
+    <url>/2023/04/06/%E8%AF%97/%E9%95%9C%E5%AD%90/</url>
     
-    <content type="html"><![CDATA[<h1 id="理想"><a href="#理想" class="headerlink" title="理想"></a>理想</h1><p>我愿意欺骗自己</p><p>阳光是暖的 空气是香的</p><p>烦恼是一只揉皱的纸飞机</p><p>让我们把它用力 扔掉</p><br/><p>在真实之海定锚</p><p>我是一只志于虚幻的独木舟</p><p>海水也不会施舍半分真实的怜悯</p><p>我只信 我的眼泪 比真实更真实</p><br/><p>我为眼泪而活 我的树根</p><p>闭眼就能看见 金色的岛屿</p><p>2019.8.28</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="镜子"><a href="#镜子" class="headerlink" title="镜子"></a>镜子</h1><p>世界上的一切都是镜子</p><p>物质的映出现实的自己</p><p>虚幻的映出理想的自己</p><p>远方是天而脚下的是地</p><br/><p>我是一只徜徉在镜的鱼</p><p>梦想是此生只照哈哈镜</p><p>世界很大前途悠远无尽</p><p>漫看云朵卷舒怡然自乐</p><p>2021年05月13日</p>]]></content>
     
     
     <categories>
